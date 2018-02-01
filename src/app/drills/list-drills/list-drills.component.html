@@ -1,0 +1,114 @@
+<div class="{{scrollClass}}" data-infinite-scroll [infiniteScrollDistance]="1" [infiniteScrollThrottle]="300" (scrolled)="onScroll()">
+  <div *ngIf="selectDrills == null" class="row" style="margin-bottom: 15px;">
+    <div class="col-sm-3">
+      <button class="btn btn-primary" routerLink="/admin/drills/add" style="width: 100%;">Add Drill</button>
+    </div>
+  </div>
+  <form class="form" (ngSubmit)="f.form.valid" #f="ngForm" novalidate>
+  <div class="row" style="margin-bottom: 15px;">
+    
+      <div class="col-sm-4">
+        <input [(ngModel)]="searchTitle" type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="inlineFormInput" 
+          name="name" placeholder="Name" style="width: 100%;">
+      </div>
+      <div class="col-sm-2">
+        <select [(ngModel)]="searchMajor" name="searchMajor" class="form-control" style="width: 100%;"
+          id="majorCategory" >
+          <option value=null>All Major</option>
+          <option *ngFor="let majorCategory of majorCategories" [value]="majorCategory.id">{{majorCategory.name}}</option>
+        </select>
+      </div>
+      <div class="col-sm-2">
+        <select [(ngModel)]="searchMinor" name="searchMinor" class="custom-select mb-2 mr-sm-2 mb-sm-0" style="width: 100%;"
+          id="minorCategory" >
+          <option value=null>All Minor</option>
+          <option *ngFor="let minorCategory of minorCategories[searchMajor]" [value]="minorCategory.id">{{minorCategory.name}}</option>
+        </select>
+      </div>
+      <div class="col-sm-2">
+        <select [(ngModel)]="searchSub" name="searchSub" class="custom-select mb-2 mr-sm-2 mb-sm-0" style="width: 100%;"
+          id="subCategory" >
+          <option value=null>All Sub</option>
+          <option *ngFor="let subCategory of subCategories[searchMinor]" [value]="subCategory.id">{{subCategory.name}}</option>
+        </select>
+      </div>
+      <div class="col-sm-2">
+          
+        <button *ngIf="!loader" type="submit" class="btn btn-primary" style="width: 100%;" (click)="searchDrill()">
+          <i class="fa fa-search" aria-hidden="true"></i>
+        </button>
+        <button *ngIf="loader" disabled type="submit" class="btn btn-primary" style="width: 100%;" >
+            <i class="fa fa-search" aria-hidden="true"></i>
+          </button>
+      </div>
+    
+  </div>
+</form>
+  <div style="text-align: -webkit-center">
+    <div class="card">
+      <div class="card-block">
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-hovered">
+              <thead>
+                <tr>
+                  <th style="width: 10px">#</th>
+                  <th>Name</th>
+                  <th>Major Category</th>
+                  <th>Minor Category</th>
+                  <th>Sub Category</th>
+                  <th>Image</th>
+                  <th *ngIf="selectDrills == null" style="width: 40px">Edit</th>
+                  <th *ngIf="selectDrills != null" style="width: 40px">Add</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                
+                <tr *ngFor="let drill of drills;let counter=index;">
+                  <td>{{counter + 1}}</td>
+                  <td>{{drill.name}}</td>
+                  <td>{{drill.drillsubs.minors.drill_majors.name}}</td>
+                  <td>{{drill.drillsubs.minors.name}}</td>
+                  <td>{{drill.drillsubs.name}}</td>
+                  <td>
+                    <img *ngIf="drill.image" src="{{drill.image.name}}" class="thumb" />
+                  </td>
+                  <td style="cursor:pointer;" *ngIf="selectDrills == null">
+                    <a routerLink="/admin/drills/edit/{{drill.id}}">
+                      <span class="badge badge-primary">Edit</span>
+                    </a>
+                  </td>
+                  <td style="cursor:pointer;" *ngIf="selectDrills != null">
+                    <a (click)="addDrillToWorkout(drill)">
+                        <span class="badge badge-primary"><span *ngIf="drill.selected == undefined || !drill.selected">Add</span>  <span *ngIf="drill.selected">Remove</span></span>
+                      </a>
+                  </td>
+                  <td style="cursor:pointer;" *ngIf="selectDrills == null">
+                    <a *ngIf="!drill.deletedCheck" (click)="deleteDrill(drill.id,counter)">
+                        <span class="badge badge-danger">Delete</span>
+                    </a>
+                    <a *ngIf="drill.deletedCheck">
+                        <loader-component [width]="20"></loader-component>
+                    </a>
+                  </td>
+                </tr>
+                <tr *ngIf="loader">
+                  <td colspan="9">
+                      <loader-component [width]="80"></loader-component>
+                  </td>
+                </tr>
+                <tr *ngIf="load_more">
+                  <td colspan="9">
+                      <p style="text-align:center">No more drills found.</p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

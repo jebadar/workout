@@ -1,0 +1,16 @@
+.boxing-preview-button
+{
+	background-color: #fd3c3d; color: #fff; padding-top: 14px; padding-bottom: 15px; text-transform: none; font-size: 16px; font-weight: bold; border-radius: 4px; border: 1px solid #fd3c3d; margin-top: 20px; margin-bottom: 10px; padding-left: 60px; padding-right: 60px; width: auto;
+}
+.boxing-preview-button:hover
+{
+	background-color: #20232a; color: #fff; border: 1px solid #20232a;
+}
+.boxing-preview-button-1
+{
+	background-color: #fff; color: #fd3c3d; padding-top: 14px; padding-bottom: 15px; text-transform: none; font-size: 16px; font-weight: bold; border-radius: 4px; border: 1px solid #d4d7df; margin-top: 20px; margin-bottom: 10px; padding-left: 60px; padding-right: 60px; width: auto;
+}
+.boxing-preview-button-1:hover
+{
+	background-color: #fd3c3d; color: white; border: 1px solid #ff1213;
+}

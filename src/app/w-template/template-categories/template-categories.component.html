@@ -1,0 +1,30 @@
+<div class="card" style="margin-top:5px">
+  <div class="card-block">
+    <div class="card-header">
+      <h3>Drill {{counter + 1}}</h3>
+    </div>
+    <div *ngIf="loader">
+      <loader-component [width]="80"></loader-component>
+    </div>
+    <div *ngIf="!loader" class="card-body">
+      <div class="form-group row">
+        <div class="col-10">
+          <select [(ngModel)]="majorSelected"  id="majorCategory" name="majorCategory" class="form-control">
+            <option value="0">Select a Major Category</option>
+            <option *ngFor="let majorCategory of majorCategories" value="{{majorCategory.id}}">{{majorCategory.name}}</option>
+          </select>
+        </div>
+      </div>
+      <div *ngIf="minorCategories[majorSelected] && minorCategories[majorSelected].length > 0" class="form-group row">
+        <div class="col-10">
+          <select  [(ngModel)]="minorSelected" (change)="selectMinorCategory()" id="minorCategory" name="minorCategory"
+            class="form-control">
+            <option value="0">Select a Minor Category</option>
+            <option *ngFor="let minorCategory of minorCategories[majorSelected]" value="{{minorCategory.id}}">{{minorCategory.name}}</option>
+          </select>
+        </div>
+      </div>
+      <p *ngIf="minorCategories[majorSelected] && minorCategories[majorSelected].length == 0" class="help-block">No minor category found in selected major.</p>
+    </div>
+  </div>
+</div>

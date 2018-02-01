@@ -1,0 +1,92 @@
+<div class="login-bg">
+  <div class="container">
+    <div class="row">
+      <div _ngcontent-c1="" class="col-sm-8 ">
+        <a _ngcontent-c1="" href="#"><img style="width: 50px; margin-top: 0px; margin-bottom: 0px;" _ngcontent-c1="" alt="" class="fb-icon" src="https://wpro.vqode.com/app/assets/images/fb-icon.png"></a>
+        <a _ngcontent-c1="" href="#"><img style="width: 50px; margin-top: 0px; margin-bottom: 0px;" _ngcontent-c1="" alt="" class="fb-icon" src="https://wpro.vqode.com/app/assets/images/twitter-icon.png"></a>
+        <a _ngcontent-c1="" href="#"><img style="width: 50px; margin-top: 0px; margin-bottom: 0px;"_ngcontent-c1="" alt="" class="fb-icon" src="https://wpro.vqode.com/app/assets/images/youtube-icon.png"></a>
+        <a _ngcontent-c1="" href="#"><img style="width: 50px; margin-top: 0px; margin-bottom: 0px;" _ngcontent-c1="" alt="" class="fb-icon" src="https://wpro.vqode.com/app/assets/images/google-icon.png"></a>
+        <a _ngcontent-c1="" href="#"><img style="width: 50px; margin-top: 0px; margin-bottom: 0px;" _ngcontent-c1="" alt="" class="fb-icon" src="https://wpro.vqode.com/app/assets/images/p-icon.png"></a>
+      </div>
+      <div class="col-sm-4">
+        <div class="text-center">
+          <button *ngIf="workout.workout_type != 'quick'" (click)="edit(workout.id)" style="margin-right: 15px;" type="submit" class="login-button"><span *ngIf="!loading">Edit</span><span *ngIf="loading">Processing</span></button>
+          <button *ngIf="!loading" (click)="delete(workout.id)" type="submit" class="login-button">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div *ngFor="let drill of drills;let counter=index">
+  <div *ngIf="drill.drill != null">
+    <div [class.previer-bg]="drill.drill.drillsubs.minors.drill_majors.name == 'main body'">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="preview-heading">
+              <h2>
+               <span *ngIf="counter > 0">
+                  <span *ngIf="drill.drill.drillsubs.minors.drill_majors.name != drills[counter-1].drill.drillsubs.minors.drill_majors.name && counter > 0">
+                    {{drill.drill.drillsubs.minors.drill_majors.name}}
+                  </span>
+                </span> 
+              <span *ngIf="counter == 0">
+                  {{drill.drill.drillsubs.minors.drill_majors.name}}
+              </span>
+            </h2>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="preview-heading">
+              <h3 style="font-weight:600 !important;line-height: 60px !important;">Drill name: <span style="font-weight:600 !important;">({{drill.drill.name}})</span></h3>
+            </div>
+            <img class="warm-up-preview-image" *ngIf="drill.drill.image != undefined" [src]="drill.drill.image.name" alt="" />
+          </div>
+          <div class="col-sm-8">
+            <div class="preview-heading">
+              <h3 style="font-weight:600 !important;line-height: 60px !important;">Duration: <span style="font-weight:600 !important;">({{drill.drill.duration}})</span></h3>
+              <p id="singleWorkPara" style="font-weight:600 !important;" [innerHTML]="drill.drill.description"></p>
+            </div>
+          </div>
+          <div class="col-sm-12">
+            <a>
+              <video class="preview-video-image" *ngIf="drill.drill.video != undefined" controls>
+                <source [src]="drill.drill.video.name">
+              </video>
+            </a>
+            <!-- <div class="preview-video-title-box">
+              <div class="preview-heading">
+                <h4>Warm up</h4>
+              </div>
+            </div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="drill.drill == null">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="preview-heading">
+            <h2><span>Drill record not found</span></h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div *ngIf="drills.length < 1 && !loading">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="preview-heading">
+            <h2><span>Drills not added yet</span></h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<div *ngIf="loading">
+  <loader-component [width]="80"></loader-component>
+</div>

@@ -1,0 +1,244 @@
+<div class="modal_wrapper" (click)="closeme($event)">
+	<div class="container" (click)="ignoreClick($event)">
+		<div class="row" style="margin: 0px;">
+			<div class="col-sm-12">
+				<div class="workout-popup-bg" [style.overflow-y]="scroll">
+					<div class="col-sm-12">
+						<div class="workout-heading">
+							<div class="text-center">
+								<h2>Workout <span>in</span> 3 <span>steps</span></h2>
+							</div>
+						</div>
+						<div>
+							<!-- Nav tabs -->
+							<ul class="nav nav-tabs" role="tablist">
+								<li role="presentation" [class.active]="view==1"><a (click)="show(1)" aria-controls="home" role="tab" data-toggle="tab"><span *ngIf="detectMobile">(1) select duration and template</span> <span *ngIf="!detectMobile">Step 1</span> </a></li>
+
+
+								<li role="presentation" *ngIf="stepsComplete>0" [class.active]="view==2"><a (click)="show(2)" aria-controls="profile" role="tab" data-toggle="tab"> <span *ngIf="detectMobile"> (2) select drill types</span> <span *ngIf="!detectMobile">Step 2</span></a></li>
+								<li role="presentation" *ngIf="stepsComplete==0" [class.active]="view==2"><a disabled aria-controls="profile" role="tab" data-toggle="tab"> <span *ngIf="detectMobile"> (2) select drill types</span> <span *ngIf="!detectMobile">Step 2</span></a></li>
+
+								<li role="presentation" *ngIf="stepsComplete == 2" [class.active]="view==3"><a (click)="show(3)" aria-controls="messages" role="tab" data-toggle="tab"> <span *ngIf="detectMobile"> (3) Preview </span> <span *ngIf="!detectMobile">Step 3</span></a></li>
+								<li role="presentation" *ngIf="stepsComplete < 2" [class.disabled]="stepsComplete<2" [class.active]="view==3"><a disabled aria-controls="messages" role="tab" data-toggle="tab"> <span *ngIf="detectMobile"> (3) Preview </span> <span *ngIf="!detectMobile">Step 3</span></a></li>
+							</ul>
+							<!-- Tab panes -->
+							<div class="tab-content">
+								<div *ngIf="view==1" role="tabpanel" class="tab-pane active" id="home">
+									<div class="row" style="margin: 0px;">
+										<div class="col-sm-4">
+											<div class="class-time-bg">
+												<div class="class-heading-bg">
+													<div class="class-heading">
+														<h3>How long is the class?</h3>
+													</div>
+												</div>
+												<div class="row" style="position: relative; max-height: 250px; overflow-y: scroll; margin-right: 0px;">
+													<div class="col-sm-12 height213">
+														<loader-red *ngIf="!templatesLoaded"></loader-red>
+														<div *ngFor="let duration of durations;let counter = index" class="check-box" (click)="selectDuration(duration.id)">
+															<div class="form-check">
+																<label class="form-check-label">
+													  					<div class="check-heading">
+																			<h4>
+																			<span *ngIf="!duration.selected" class="fa fa-square-o"></span>
+																			<span *ngIf="duration.selected" class="fa fa-check-square-o"></span>
+																			{{duration.minutes}} Minutes
+																			</h4>
+																		</div>
+																	</label>
+															</div>
+														</div>
+														<div *ngIf="durations.length < 1 && templatesLoaded" class="check-heading">
+																<h5><span>No Duration configured</span></h5>
+															</div>
+													</div>
+												</div>
+												<div class="clear"></div>
+											</div>
+										</div>
+										<div class="col-sm-8 col">
+
+											<div class="check-heading">
+												<h5>Select <span>template</span> (Type)</h5>
+											</div>
+											<div class="clear"></div>
+											<div *ngIf="durationSelected==false" class="row height213">
+												<div class="col-sm-12">
+													<div class="templete-box active">
+														<div class="templete-heading">
+															<h2>Select a template duration.</h2>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div *ngIf="durationSelected && types.length==0" class="row height213">
+												<div class="col-sm-12">
+													<div class="templete-box active">
+														<div class="templete-heading">
+															<h2>Sorry, no types found for the selected duration.</h2>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div *ngIf="durationSelected && types.length>0" class="row height213" style="position: relative;
+													max-height: 300px;
+													overflow-y: scroll;">
+												<div *ngFor="let type of types;let counter = index" class="col-sm-4">
+													<div class="templete-box active" [class.selected]="type.selected" (click)="selectType(type.id)">
+														<div class="templete-heading">
+															<h2 [class.heading]="type.selected">{{type.title}}</h2>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-sm-12">
+													<div class="text-right">
+														<button type="submit" *ngIf="stepsComplete>0" (click)="show(2)" class="workout-next-button">Next</button>
+														<!-- <button type="submit" *ngIf="stepsComplete==0" class="workout-next-button">Next</button>														 -->
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div *ngIf="view==2" role="tabpanel" class="tab-pane active" id="profile">
+									<div class="row">
+										<div class="col-sm-4">
+											<div class="class-time-bg">
+												<div class="row" style="position: relative; max-height: 250px; overflow-y: scroll; margin-right: 0px;">
+													<ul class="nav nav-tabs1" role="tablist">
+														<li *ngFor="let minor of minors;let counter=index" (click)=" selectMinor(minor.minor_id,counter)" [class.active]="minor.selected" role="presentation">
+														 	<a href="#4" aria-controls="settings" role="tab" data-toggle="tab" style="border:none;">Drill {{counter+1}}</a>
+														</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+										<div class="col-sm-8 col">
+											<div class="check-heading">
+												<h5>Select <span>Drill <span *ngIf="drillSelected!=false">{{drillCounter+1}}</span> </span> Type</h5>
+											</div>
+											<div class="clear"></div>
+											<div *ngIf="drillSelected==false" class="row height213" >
+												<div class="col-sm-12">
+													<div class="templete-box active">
+														<div class="templete-heading">
+															<h2>Select a drill.</h2>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div *ngIf="drillSelected && subs.length==0" class="row height213">
+												<div class="col-sm-12">
+													<div class="templete-box active">
+														<div class="templete-heading">
+															<h2>Sorry, no types found for the selected drill.</h2>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div *ngIf="drillSelected==true" class="row height213" style="position: relative;
+											max-height: 300px;
+											overflow-y: scroll;">
+												<div *ngFor="let sub of subs;let counter=index" class="col-sm-4">
+													<div [class.selected]="sub.selected" (click)="selectSub(sub.id,counter)" style="cursor:pointer" class="warm-box">
+														<div  class="form-check">
+															<div class="check-box-heading">
+																<h4 style="text-align:center;padding-left:0px !important;" [class.heading]="sub.selected">{{sub.name}}</h4>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-sm-12">
+													<div class="text-right">
+														<button type="submit" *ngIf="stepsComplete == 2" (click)="show(3)" class="workout-next-button">Preview</button>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div *ngIf="view==3" role="tabpanel" class="tab-pane active" id="messages">
+									<div class="col-sm-12 col">
+										<div class="row">
+											<div class="col-12">
+												<div class="check-heading">
+													<div class="text-center">
+														<h5><span>Preview</span></h5>
+													</div>
+												</div>
+											</div>
+											<div class="col-sm-4 offset-sm-4 col">
+												<div class="no-drills-bg">
+													<div class="no-drills">
+														<h2>no of drills seleced</h2>
+													</div>
+												</div>
+												<div class="no-drills-cal-bg">
+													<div class="no-drills">
+														<h2><span>{{finalSubs.length}}</span></h2>
+													</div>
+												</div>
+											</div>
+											<div class="col-sm-4 col">
+												<div class="no-drills-bg">
+													<div class="no-drills">
+														<h2>Total duration</h2>
+													</div>
+												</div>
+												<div class="no-drills-cal-bg">
+													<div class="no-drills">
+														<h2><span>{{duration.minutes}}:00</span></h2>
+													</div>
+												</div>
+											</div>
+										</div>
+											<div class="clear"></div>
+											<div class="row" style="position: relative; max-height: 350px; overflow-y: scroll; ">
+											<div *ngFor="let sub of finalSubs;let counter=index" class="col-sm-4 col">
+												<div class="warm-up-detail-box">
+													<div class="warm-up-detail-heading-box">
+														<div class="warm-up-detail-heading">
+															<h2>Drill {{counter+1}}</h2>
+														</div>
+													</div>
+													<div class="row">
+														<div class="col-sm-6">
+															<div class="warm-up-detail-heading">
+																<h2><span>Drill Type</span></h2>
+															</div>
+														</div>
+														<div class="col-sm-3">
+															<div class="warm-up-detail-heading">
+																<h3>{{sub.name}}</h3>
+															</div>
+														</div>
+														<div class="col-sm-2">
+															<button type="submit" (click)="editDrill(sub.minor.id,counter)" class="edit-button">Edit</button>
+														</div>
+													</div>
+													<div class="clear"></div>
+												</div>
+											</div>
+										</div>
+											<div class="col-12">
+												<div class="text-center">
+														<loader-red *ngIf="loading"></loader-red>														
+													<button *ngIf="!loading" type="submit" (click)="generateWorkout()" class="workout-next-button">Generate Workout</button>
+												</div>
+											</div>
+										
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="clear"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

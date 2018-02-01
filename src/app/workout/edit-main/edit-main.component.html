@@ -1,0 +1,88 @@
+<!-- Diy Workout Section Start-->
+<div class="container">
+  <loader-red *ngIf="loading"></loader-red>      
+  <div *ngIf="!loading" class="row">
+    <div   class="col-sm-12">
+      <div class="diy-heading">
+        <h2>Diy <span>Workout</span></h2>
+      </div>
+    </div>
+    <div class="col-sm-4 offset-sm-4 col">
+      <div class="no-drills-bg">
+        <div class="no-drills">
+          <h2>no of drills selected</h2>
+        </div>
+      </div>
+      <div class="no-drills-cal-bg">
+        <div class="no-drills">
+          <h2><span>{{workout.no_of_drills}}</span></h2>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4 col">
+      <div class="no-drills-bg">
+        <div class="no-drills">
+          <h2>Total duration</h2>
+        </div>
+      </div>
+      <div class="no-drills-cal-bg">
+        <div class="no-drills">
+          <h2><span>{{workout.duration}}:00</span></h2>
+        </div>
+      </div>
+    </div>
+    <div class="clear"></div>
+    <div class="col-sm-12">
+      <div class="diy-boxing-box" *ngFor="let drill of workout.workoutdetails;let counter=index">
+        <div *ngIf="drill.drill != null" class="row">
+          <div class="col-sm-4">
+            <img class="boxing-image"  [src]="drill.drill.image.name" alt="" />
+            <button  type="submit" (click)="preview(counter)" class="boxing-preview-button">Preview</button>
+            <div class="clear"></div>
+          </div>
+          <div class="col-sm-8">
+              <button type="submit" *ngIf="drill.delete != true" (click)="deleteDrill(counter)" class="boxing-preview-button-1">Delete</button>
+              <div class="clear-fix"></div>
+              <div *ngIf="drill.delete == true" class="col-sm-3 offset-9">
+                  <loader-red [width]="40" ></loader-red>                                      
+              </div>
+              <div class="boxing-heading">
+                <h3>{{drill.drill.name}}</h3>
+                 <p id="dummyPara"  [innerHTML]="drill.drill.description"></p>
+              </div>
+            
+            <div class="row" style="margin: 0px;">
+              <div class="col-sm-4 col-p">
+                <img class="aero" [src]="assetsUrl+'/images/aero.png'" alt="" />
+                <div class="boxing-heading">
+                  <h4>{{drill.drill.drillmajors.name}}</h4>
+                </div>
+              </div>
+              <div class="col-sm-4 col-p">
+                <img class="aero" [src]="assetsUrl+'images/aero.png'" alt="" />
+                <div class="boxing-heading">
+                  <h4>{{drill.drill.drillminors.name}}</h4>
+                </div>
+              </div>
+              <div class="col-sm-4 col-p">
+                <img class="aero" [src]="assetsUrl+'images/aero.png'" alt="" />
+                <div class="boxing-heading">
+                  <h4>{{drill.drill.drillsubs.name}}</h4>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+        <div class="clear"></div>
+        <preview-drill-component [drill]="drill.drill" [close]="closePreview" [counter]="counter" *ngIf="drill.enablePreview == true"></preview-drill-component>
+
+      </div>
+      <div (click)="openAddDrill()" class="boxing-add">
+        <a ><img [src]="assetsUrl+'images/add-icon.png'" alt=""/></a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Diy Workout Section End-->
+<main-add-drill-component *ngIf="enableAddDrill" [addDrill]="putWorkout"  [close]="closeAddDrill"></main-add-drill-component>

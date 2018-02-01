@@ -1,0 +1,31 @@
+<div *ngIf="!loader">
+  <div class="form-group">
+    <!-- <label for="majorCategory">Select Major Category</label> -->
+    <select [(ngModel)]="majorId" (change)="selectMajorCategory($event.target.value)" id="majorCategory" name="majorCategory" class="form-control">
+      <option [value]=null>Select a Major Category</option>
+      <option *ngFor="let majorCategory of majorCategories" value="{{majorCategory.id}}">{{majorCategory.name}}</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <!-- <label for="minorCategory">Select Minor Category</label> -->
+    <select *ngIf="majorId && minorCategories[majorId]" [(ngModel)]="minorId" (change)="selectMinorCategory($event.target.value)" id="minorCategory" name="minorCategory" class="form-control">
+      <option [value]=null>Select a Minor Category</option>
+      <option *ngFor="let minorCategory of minorCategories[majorId]" value="{{minorCategory.id}}">{{minorCategory.name}}</option>
+    </select>
+    <div *ngIf="minorCategories[majorId] && minorCategories[majorId].length==0" class="alert alert-danger" role="alert">
+      Minor Categories not defined.
+    </div>
+  </div>
+  <div class="form-group">
+    <select *ngIf="minorId && subCategories[minorId]" [(ngModel)]="subId" (change)="selectSubCategory($event.target.value)" id="subCategory" name="subCategory" class="form-control">
+      <option [value]=null>Select a Sub Category</option>
+      <option *ngFor="let subCategory of subCategories[minorId]" value="{{subCategory.id}}">{{subCategory.name}}</option>
+    </select>
+    <div *ngIf="subCategories[minorId] && subCategories[minorId].length==0" class="alert alert-danger" role="alert">
+      Sub Categories not defined.
+    </div>
+  </div>
+</div>
+<div *ngIf="loader">
+  <loader-component [width]="80"></loader-component>
+</div>

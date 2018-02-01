@@ -1,0 +1,85 @@
+<div class="top-bg" style="min-height: 50px;">
+	<div class="container">
+		<div class="row">
+			<!-- <div class="col-sm-8">
+				<form class="navbar-form navbar-left" style="margin-top: 17px;">
+					<div class="form-group">
+						<input type="text" class="form-control nav-form-control" placeholder="Search">
+						<button type="submit" class="btn btn-default"><img [src]="assetsUrl+'images/search-icon.png'" alt=""/></button>
+					</div>
+				</form>
+			</div> -->
+			<div class="col-sm-3 offset-sm-8">
+				
+			</div>
+			<div class="col-sm-1">
+					
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Top Search Section End-->
+
+<!-- Top Navigation Section Start-->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<div class="container">
+		<a class="navbar-brand" style="cursor:pointer" (click)="navigate('')"><img class="logo" [src]="assetsUrl+'images/logo.png'" alt=""></a>
+		<button (click)="collapseMenu()" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+		 aria-expanded="false" aria-label="Toggle navigation">
+		  <span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" [collapse]="isCollapsed" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item active">
+					<a class="nav-link" style="cursor:pointer" (click)="navigate('/')">Dashboard<span class="sr-only">(current)</span></a>
+				</li>
+				<li class="nav-item"></li>
+				<li class="nav-item"></li>
+				<li class="nav-item"></li>
+				<li class="nav-item"></li>
+				<li class="nav-item"></li>
+				<li class="nav-item"></li>
+				<li class="nav-item" style="padding-left: 0px;">
+					<a *ngIf="user != null" class="nav-link" style="cursor:pointer" >Welcome {{user.name}}</a>
+				</li>
+				<li class="nav-item"style="padding-left: 0px;">
+					<a *ngIf="user != null" class="nav-link" style="cursor:pointer"><logout-component [mainPage]="true"></logout-component></a>
+				</li>
+				
+			</ul>
+		</div>
+	</div>
+</nav>
+<!-- Top Navigation Section End-->
+<div class="profile-banner user-pro-banner">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12">
+				<h1><span>Workout</span>Builder<span>Pro</span></h1>
+				<h1>Members Area</h1>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="banner-bottom-border"></div>
+<router-outlet></router-outlet>
+
+<!-- Footer Section Start-->
+
+
+
+<div class="copyright-bg">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="copyright">
+					<div class="text-center">
+						<p>© 2017 Workout Builder Pro, All rights reserved. WorkoutBuilderPro.com</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Footer Section End-->

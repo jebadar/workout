@@ -1,0 +1,49 @@
+<div class="modal_wrapper">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="register-popup-bg">
+            <div class="col-sm-6" style="padding-left: 0px; padding-right: 0px; float: left;">
+              <div class="login-bg" style="border-top-right-radius: 0px; border-bottom-right-radius: 0px;">
+                <h2 style="text-align: center; color: #fd3c3d; font-weight: 900; text-transform: uppercase; padding-top: 30px;">Create DIY Workout</h2>
+
+                <!-- Verify Reset area start -->
+                    <form class="padding">
+                      <div class="form-group" [formGroup]="workoutForm">
+                        <label for="exampleInputPassword1"><div class="login"><h3>Title</h3></div></label>
+                        <input type="text" class="form-control" id="title" placeholder="Title"name="title" formControlName="title">
+                      </div>
+                      <button style="float:right;margin-right:0px;" type="submit" *ngIf="!loading" (click)="create()" class="login-popup-button">Create</button>
+                      <loader-red [width]="40" *ngIf="loading"></loader-red>                                                                                
+                    </form>
+    
+  
+                <!-- End -->
+  
+                <div class="clear"></div>
+              </div>
+              <div class="clear"></div>
+            </div>
+  
+  
+  
+  
+            <div class="col-sm-6" style="padding-left: 0px; padding-right: 0px; float: left;">
+              <div class="login-bg" style="background-color: #fd3c3d; border-bottom-right-radius: 4px !important; border: 0px; border-radius: 0px; border-top-right-radius: 4px;text-align:center;">
+                  <div class="col-sm-12">
+                      <button type="button" class="close" (click)="navigate()">&times;</button>
+                  </div>
+                  <div class="col-sm-12">
+               <img class="create-diy-image" style="margin-top:30px;margin-bottom: 30px;" [src]="assetsUrl + 'images/diy-create-image.png'" alt="" />
+              </div>
+              </div>
+            </div>
+            <div class="clear"></div>
+  
+            <div class="clear"></div>
+  
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

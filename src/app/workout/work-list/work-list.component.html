@@ -1,0 +1,79 @@
+  <div class="row">
+  <div class="col-md-12">
+    <form (ngSubmit)="f.form.valid" #f="ngForm" novalidate>
+      
+      <div class="row">
+        
+        <div class="col-md-3">
+          <label for="workType">Workout Type</label>
+            <select class="form-control" id="workType" name="type" [(ngModel)]="type">
+              <option value="" selected>Workout Type</option>
+              <option  value="diy">DIY</option>
+              <option  value="quick">Quick</option> 
+          </select>
+        </div>
+
+        <div class="col-md-3">
+            <label for="duration">Duration:</label>
+            <input type="number" class="form-control mb-2 mr-sm-2 mb-sm-0" id="inlineFormInput" [(ngModel)]="duration_from" name="duration_from" placeholder="From"><br />
+            <input type="number" class="form-control mb-2 mr-sm-2 mb-sm-0" id="inlineFormInput" [(ngModel)]="duration_to" name="duration_to" placeholder="To">
+            <br /><br />
+    </div>
+      <div class="col-md-3">
+          <label for="user">User:</label>
+        <ng2-completer [minSearchLength]="1" placeholder="Select user" name="search" [inputClass]="['form-control']" 
+          [datasource]="dataService" (selected)="onSelected($event)"></ng2-completer>
+      </div>
+      <div class="col-md-3">
+        <br />
+        <br />
+      <button *ngIf="!loading" type="submit" (click)="search()" class="btn btn-block  btn-primary"><i class="fa fa-search" aria-hidden="true">Search</i></button>      
+      <button *ngIf="loading" type="submit" disabled class="btn btn-block  btn-primary"><i class="fa fa-search" aria-hidden="true">Search</i></button>      
+      
+      </div>
+    </div>
+    </form>
+  </div>
+
+</div>
+<div class="row" data-infinite-scroll [infiniteScrollDistance]="1" [infiniteScrollThrottle]="300" (scrolled)="onScroll()">    
+  <div class="col-md-12">
+    <div class="card">
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Title</th>
+                  <th>Type</th>
+                  <th>Duration</th>
+                  <th>Created by</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td *ngIf="!loading && workoutList.length==0" colspan="6" class="text-center">No workout found.</td>
+                </tr>
+                <tr *ngFor="let workout of workoutList;let counter=index">
+                  <td>{{counter+1}}</td>
+                  <td>{{workout.title}}</td>
+                  <td>{{workout.workout_type}}</td>
+                  <td>{{workout.duration}}</td>
+                  <td>{{workout.users.email}}</td>
+                  <td>
+                    <button class="btn btn-primary" (click)="edit(workout.id)">Edit</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div *ngIf="loading">
+            <loader-component [width]="80"></loader-component>
+          </div>
+        </div>
+    </div>
+
+  </div>
+</div>

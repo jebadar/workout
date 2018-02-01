@@ -1,0 +1,14 @@
+.innerTable {
+    border-top: none;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+.innerTable input{
+    text-align: left;
+    
+}
+
+.tablewrapper{
+    margin: 0px;
+}

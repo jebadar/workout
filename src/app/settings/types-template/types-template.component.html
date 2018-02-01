@@ -1,0 +1,55 @@
+<div class="card">
+    <div class="card-block">
+        <div class="card-header">
+          <div class="card-title">
+            <strong>Template Types</strong>
+            <span style="cursor:pointer" (click)="add()" class="badge badge-primary"><i class="fa fa-pencil" aria-hidden="true"></i>Add</span>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th width="10%">#</th>
+                  <th width="50%">Title</th>
+                  <th width="40%"></th>
+                </tr>
+              </thead>
+              <tbody>
+                  <tr *ngIf="loading && types.length==0">
+                    <td colspan="5">
+                        <loader-component></loader-component>
+                    </td>
+                  </tr>
+                  <tr *ngIf="!loading && types.length==0">
+                      <td colspan="5" class="text-center">
+                          No templates found.
+                      </td>
+                  </tr>
+
+                <tr *ngFor="let type of types;let counter = index">
+                  <td >{{counter+1}}</td>
+                  <td *ngIf="type.editFlag != 'true'">{{type.title}}</td>
+                
+                
+                
+                  <td colspan="2" *ngIf="type.editFlag  == 'pending'">
+                    <loader-component width="35"></loader-component>
+                  </td>
+                  
+                  <td *ngIf="type.editFlag =='false'" class="text-right">
+                    <span style="cursor:pointer;" (click)="edit(counter,'true')" class="badge badge-primary"><i class="fa fa-pencil" aria-hidden="true"></i>Edit</span>
+                    <span style="cursor:pointer;" (click)="delete(type.id,counter)" class="badge badge-danger"><i class="fa fa-pencil" aria-hidden="true"></i>Delete</span>
+                  </td>
+                  
+                  <td colspan="2" *ngIf="type.editFlag =='true'">
+                    <edit-type-component [type]="type" [counter]="counter" [edit]="edit"></edit-type-component>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+  </div>
+</div>

@@ -1,0 +1,38 @@
+<div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div class="modal-title">
+          <strong>Add Template Duration</strong>
+        </div>
+      </div>
+      
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-12">
+              <div [formGroup]="durationForm">
+                  <input class="form-control" type="number"  min="0" name="minutes" formControlName="minutes" placeholder="Total Duration (minutes)">
+              </div>
+          </div>
+          <div class="col-md-12"><br /></div>
+
+          <div class="col-md-6">
+              <div [formGroup]="durationForm">
+                  <input class="form-control" type="number" min="0" id="example-url-input"  name="from" formControlName="free_time_from" placeholder="Free time from (minutes)" >
+              </div>
+          </div>
+          <div class="col-md-6">
+              <div [formGroup]="durationForm">
+                  <input class="form-control" type="number" min="0" id="example-url-input"  name="to" formControlName="free_time_to" placeholder="Free time to (minutes)">
+              </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button *ngIf="!loading" type="button" class="btn btn-primary" (click)="submit()">Add</button>
+        <button *ngIf="!loading" type="button" class="btn btn-default" (click)="close()">Cancel</button>
+        <loader-component *ngIf="loading" width="30"></loader-component>
+      </div>
+      
+      
+    </div>
+  </div>

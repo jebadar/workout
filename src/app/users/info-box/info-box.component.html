@@ -1,0 +1,80 @@
+<div class="profile-bg">
+
+  <div class="profile-name">
+    <h2 *ngIf="!editFlag">{{user.name | uppercase}}</h2>
+    <div *ngIf="editFlag" class=" col-sm-12">
+      <input  type="text" class="form-control form-control-height" id="name" name="name" [(ngModel)]="user.name" placeholder="Name">
+    </div>
+    <h2>
+      <span>Workout builder pro {{user.membership_status | uppercase}}</span>
+    </h2>
+  </div>
+
+  <div class="border"></div>
+
+  <div class="profile-name">
+    <h3>Contact Information</h3>
+    <h4>Email Address</h4>
+
+    <h4 *ngIf="!editFlag"><span>{{user.email}}</span></h4>
+
+    <div *ngIf="editFlag" class=" col-sm-12">
+      <input  readonly type="text" class="form-control form-control-height" id="email" name="email" [(ngModel)]="user.email" placeholder="email">
+    </div>
+
+    <div class="clear"></div>
+
+  </div>
+
+  <div class="border"></div>
+  <div class="clear"></div>
+
+  <div class="profile-name">
+    <h4>Phone number</h4>
+    <h4 *ngIf="!editFlag"><span>{{user.cell_number}}</span></h4>
+    <div *ngIf="editFlag" class=" col-sm-12" >
+      <input type="number" class="form-control form-control-height" id="landline" name="cell_num" [(ngModel)]="user.cell_number"
+        placeholder="Landline Number" >
+    </div>
+
+    <div class="clear"></div>
+
+  </div>
+
+  <div class="border"></div>
+
+  <div class="profile-name" *ngIf="editFlag">
+      <h4>Password</h4>
+      <div  class=" col-sm-12" [formGroup]="userForm">
+        <input type="password" class="form-control form-control-height" id="landline"  name="password" formControlName="password" placeholder="Password" >
+      </div>
+  
+      <div class="clear"></div>
+      <div class="border"></div>
+    </div>
+
+    <div class="profile-name" *ngIf="editFlag">
+        <h4>Confirm Password</h4>
+        <div  class=" col-sm-12" [formGroup]="userForm" >
+          <input type="password" class="form-control form-control-height" id="landline" name="confirmPassword" formControlName="confirmPassword"
+            placeholder="Confirm Password" >
+        </div>
+    
+        <div class="clear"></div>
+        <div class="border"></div>
+      </div>
+
+  <div class="col-md-12 text-right">
+    <button *ngIf="!editFlag && !loading" type="submit" style="float: none;" (click)="edit()" class="profile-workout-button">Edit</button>
+    <button *ngIf="editFlag && !loading" type="submit" style="float: none;" (click)="submit()" class="profile-workout-button">Save</button>
+    <button *ngIf="editFlag && !loading" type="submit" style="float: none;" (click)="edit()" class="profile-workout-button">Cancel</button>
+    
+    <div style="position: relative;margin-top: 0px;float: right !important;text-align: right;" *ngIf="loading">
+        <loader-component [width]="50"></loader-component>
+    </div>
+
+  </div>
+
+  <div class="clear"></div>
+
+</div>

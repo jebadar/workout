@@ -1,0 +1,36 @@
+<div class="modal_wrapper" (click)="closeme($event)">
+
+  <div class="container" (click)="ignoreClick($event)">
+    <div class="row" style="margin: 0px;">
+      <div class="col-sm-12">
+        <div class="add-drills-popup-bg scrollbar" id="style-3">
+            <div class="force-overflow"></div>            
+          <div class="add-drills">
+            <h2>Drills <span>Workout</span></h2>
+          </div>
+          <loader-red *ngIf="loading"></loader-red>          
+          <div *ngIf="!loading" class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+            <div class="panel panel-default" *ngFor="let major of categories;let counter=index">
+              <div class="panel-heading" (click)="openDrop(counter)" role="tab" id="headingOne">
+                <h4 class="panel-title">
+                  <a role="button" data-toggle="collapse" data-parent="#accordion" aria-expanded="true" aria-controls="collapseOne">
+                    <div class="add-drills">
+                      <h3>{{major.name}}</h3>
+                    </div>
+                  </a>
+                </h4>
+              </div>
+              <main-list-drills-component *ngIf="major.selected" [addDrill]="addDrill"  [majorCategory]="major" [pushDrill]="pushDrill" [parentDrillObj]="drillArr" ></main-list-drills-component>
+            </div>
+            <div class="clear"></div>
+          </div>
+          <div class="text-center">
+            <button type="submit" (click)="addDrillToWorkout()" class="workout-btn">{{drillArr.length}} Workouts</button>
+            <button type="submit" class="workout-btn">Duration Total {{durationOfSelectedDrills}} mins</button>            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

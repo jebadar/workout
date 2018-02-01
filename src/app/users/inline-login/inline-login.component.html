@@ -1,0 +1,33 @@
+<div *ngIf="!successReset" class="row">
+    <div class="col-sm-4" [formGroup]="loginForm">
+      <input type="email" *ngIf="!resetCheck"  class="form-control" id="exampleInputEmail1" placeholder="Email" name="email" formControlName="email">
+    </div>
+    <div class="col-sm-4" *ngIf="!resetCheck" [formGroup]="loginForm">
+      <input type="password"  class="form-control" id="exampleInputPassword1" placeholder="Password" name="password"
+        formControlName="password">
+    </div>
+    <div class="col-sm-4" *ngIf="resetCheck" [formGroup]="loginForm">
+        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email" name="email" formControlName="email">
+      </div>
+    <div class="col-sm-4">
+      <div class="text-center">
+          
+        <button style="margin-right: 15px;" type="submit" (click)="submit()" class="login-button">
+          <span *ngIf="!loading && !resetCheck">Login</span><span *ngIf="loading">Processing</span> <span *ngIf="!loading && resetCheck">Reset</span>
+        </button>
+        <button *ngIf="!loading" type="submit" (click)="submitRegister()" class="login-button"> <span *ngIf="!resetCheck">Register</span><span *ngIf="resetCheck">cancel</span></button>
+        <!-- <a (click)="resetEmail()"><span style="float: left; text-transform: uppercase; color: #fd3c3d;" *ngIf="!resetCheck && !loading">Forget Password</span></a> -->
+        <button  *ngIf="!resetCheck && !loading" style="margin-right: 0px;" type="submit" (click)="resetEmail()" class="login-button">
+            <span *ngIf="!loading && !resetCheck"><img [src]="assetUrl + 'images/forget-icon-1.png'" alt=""/></span>
+          </button>
+      </div>
+    </div>
+
+</div>
+<div class="row" *ngIf="successReset">
+    <div class="col-sm-12">
+    <h4>Email Succesfully sent</h4>
+  </div>
+</div>
+
+<register-component [purpose]="'register'" [close]="closeRegister" *ngIf="showRegister"></register-component>

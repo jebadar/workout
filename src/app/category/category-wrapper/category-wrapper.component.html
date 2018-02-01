@@ -1,0 +1,13 @@
+<div class="alert alert-info" role="alert">
+        <strong>Pro Tip!</strong> Double click to edit category title.
+</div>
+<fetch-category-component 
+    *ngIf="!loading"
+    [level]="'Major'"
+    [catObj]="catObj"
+></fetch-category-component>
+
+<loader-component 
+    *ngIf="loading"
+    [width]="80"
+></loader-component>

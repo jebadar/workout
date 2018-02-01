@@ -1,0 +1,17 @@
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <!-- <button type="button" class="close" (click)="close()">&times;</button> -->
+      <div class="modal-title"><strong>Confirm Delete</strong></div>
+    </div>
+    <div>
+      <div class="modal-body">
+      <p>Are you sure you want to delete?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" [class.boxing-preview-button]="noPurpose == 'main'" [class.btn-primary]="noPurpose != 'main'" [class.btn]="noPurpose != 'main'" (click)="confirm()">Delete</button>
+        <button type="button" [class.boxing-preview-button-1]="noPurpose == 'main'"  [class.btn-default]="noPurpose != 'main'" [class.btn]="noPurpose != 'main'" (click)="close()">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>

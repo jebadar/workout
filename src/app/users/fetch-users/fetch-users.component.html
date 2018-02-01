@@ -1,0 +1,75 @@
+<div class="search-results" data-infinite-scroll [infiniteScrollDistance]="300" [infiniteScrollThrottle]="300" (scrolled)="onScroll()">
+  
+  
+  <div class="row">
+    <div class="col-md-8">
+      <form class="form-inline" (ngSubmit)="f.form.valid" #f="ngForm" novalidate>
+        <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="inlineFormInput" [(ngModel)]="name" name="name" placeholder="Name">
+        <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="inlineFormInput" [(ngModel)]="email" name="email" placeholder="Email">
+        <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelect" [(ngModel)]="member_status" name="status">
+          <option value="" selected>Status</option>
+          <option  value="verified">Verified</option>
+          <option  value="unverified">Unverified</option>
+          <option  value="admin">Admin</option>        
+        </select>
+
+        <button *ngIf="!loading" type="submit" class="btn btn-primary" (click)="searchUser()"><i class="fa fa-search" aria-hidden="true"></i></button>
+        <button *ngIf="loading" type="submit" class="btn btn-primary" disabled><i class="fa fa-search" aria-hidden="true"></i></button>
+      </form>
+      <br />
+    </div>
+    <div class="col-md-4">
+        <button style="float:right" class="btn btn-primary" (click)="addUser()">Add User</button>
+    </div>
+    <div class="col-md-12">
+        
+            <div class="card">
+              <div class="card-block">
+                <div class="card-body">
+                    <div style="overflow-y: hidden">
+                    <table class="table table-responsive">
+                      <thead>
+                        <tr>
+                          <th>#</th>
+                          <th>Name</th>
+                          <th>Email</th>
+                          <th>Status</th>
+                          <th>Level</th>
+                          <th>Edit</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngIf="users.length==0 && !loading">
+                            <td colspan="6" style="text-align:center">No users found</td>
+                        </tr>
+                        <tr *ngFor="let user of users;let counter = index">
+                          <th scope="row">{{counter+1}}</th>
+                          <td>{{user.name}}</td>
+                          <td>{{user.email}}</td>
+                          <td>
+                            <span *ngIf="user.status != 0" class="badge badge-info">Not Blocked</span>
+                            <span *ngIf="user.status == 0" class="badge badge-danger">Blocked</span>
+                          </td>
+                          <td>
+                            <span *ngIf="user.membership_status == 'admin'" class="badge badge-pill badge-primary">{{user.membership_status}}</span>
+                            <span *ngIf="user.membership_status == 'verified'" class="badge badge-pill badge-success">{{user.membership_status}}</span>
+                            <span *ngIf="user.membership_status == 'unverified'" class="badge badge-pill badge-danger">{{user.membership_status}}</span>
+                          </td>
+                          <td>
+                            <button class="btn btn-primary" (click)="edit(user.id)">Edit</button>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div *ngIf="loading">
+                    <loader-component [width]="80"></loader-component>
+                  </div>
+                </div>
+              </div>
+            </div>
+          
+    </div>
+  </div>
+  
+</div>

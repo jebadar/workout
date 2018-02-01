@@ -1,0 +1,39 @@
+<div class="card">
+    <div class="card-block">
+
+
+              <div class="card-header">
+                <div class="card-title">
+                  <strong>General Settings</strong>
+                  <span *ngIf="!editMode" style="cursor:pointer;" (click)="edit()" class="badge badge-primary"><i class="fa fa-pencil" aria-hidden="true"></i>Edit</span>
+                </div>
+              </div>
+              <div class="card-body">
+                <div class="text-center" *ngIf="!loaded">
+                  Please wait...
+                </div>
+                <table class="table" *ngIf="!editMode">
+                  <tr *ngFor="let item of setting">
+                    <td width="40%">{{item.name}}</td>
+                    <td>{{item.value}}</td>
+                  </tr>
+                </table>
+                
+
+                <table class="table" *ngIf="editMode">
+                    <tr *ngFor="let item of setting">
+                      <td width="40%">{{item.name}}</td>
+                      <td><input type="text" class="form-control small-padding" [(ngModel)]="item.value" /></td>
+                    </tr>
+                </table>
+                
+
+                <div *ngIf="editMode" class="text-right">
+                    <button *ngIf="!loading" type="button" (click)="edit()" class="btn btn-secondary">Cancel</button>
+                    <button *ngIf="!loading" type="submit" (click)="submit()" class="btn btn-primary">Save</button>
+                    <loader-component *ngIf="loading" [width]="30"></loader-component>
+                </div>
+              </div>
+
+  </div>
+</div>

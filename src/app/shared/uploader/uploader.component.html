@@ -1,0 +1,34 @@
+<div [hidden]="hide">
+  <input #file type="file" ng2FileSelect [uploader]="uploader">
+</div>
+
+<div [hidden]="uploader.queue.length < 100">
+  <button type="button" #uploadButton class="btn btn-success btn-xs" (click)="uploader.uploadAll()">
+    <span class="glyphicon glyphicon-upload"></span> Upload
+  </button>
+</div>
+<div *ngIf="post_image!=2">
+  <label *ngIf='image'>Select Image (png/jpeg)</label>
+  <label *ngIf='video'>Select Video (mp4)</label>
+  <a #upload (click)="file.click()" class="btn btn-sm btn-default" style="float: right;">Upload</a>
+</div>
+<div *ngIf="progress" class="progress">
+  <div class="progress-bar" role="progressbar" [ngStyle]="{ 'width': progress_bar + '%' }">
+    {{progress_bar}}%
+  </div>
+</div>
+
+<div *ngIf='image'>
+  <div *ngIf='post_image==2' class="col-sm-12 text-center">
+    <img style="width: 100%;" src="{{media_url}}">
+    <a (click)="removeMedia()"><span class="badge bg-red">Remove</span></a>
+  </div>
+</div>
+<div *ngIf='video'>
+  <div *ngIf='post_image==2'  class="col-sm-12 text-center">
+    <video style="width: 100%;" controls>
+      <source src="{{media_url}}" type="video/mp4">
+    </video>
+    <a (click)="removeMedia()"><span class="badge bg-red">Remove</span></a>
+  </div>
+</div>

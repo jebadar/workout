@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700,900');
+/*
+
+Workout Builder Pro
+
+*/
+
+/*-------- Body Style Start -------- */
+body
+{
+}
+/*-------- Body Style End -------- */
+
+/*-------- Add Drills Popup css Style Start -------- */
+.clear
+{
+	clear: both;
+}
+.add-drills-popup-bg
+{
+	width: 100%; background-color: white; border-radius: 4px; padding-top: 30px; padding-bottom: 10px; box-shadow: 0px 0px 5px #000; margin-top: 50px; padding-left: 20px; padding-right: 20px;
+}
+.add-drills h2
+{
+	font-size: 36px; color: #20232a; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; padding: 0px; margin: 0px; text-align: center;
+}
+.add-drills h2 span
+{
+	font-size: 36px; color: #fd3c3d; font-weight: 900; letter-spacing: 2px; text-transform: uppercase; padding: 0px; margin: 0px;
+}
+.add-drills h3
+{
+	font-size: 18px; color: #fff; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; padding: 0px; margin: 0px; text-align: left;
+}
+.add-drills h4
+{
+	font-size: 24px; color: #20232a; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; padding: 0px; margin: 0px; text-align: center; padding-top: 20px;
+}
+.add-drills h4 span
+{
+	font-size: 24px; color: #fd3c3d; font-weight: 900; letter-spacing: 2px; text-transform: uppercase; padding: 0px; margin: 0px; text-align: center;
+}
+.add-drills h5
+{
+	font-size: 14px; color: #fd3c3d; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; padding: 0px; margin: 0px; text-align: left; padding-top: 0px;
+}
+.add-drills p
+{
+	font-size: 14px; color: #5a5a5a; font-weight: normal; letter-spacing: 2px; text-transform: none; padding: 0px; margin: 0px; text-align: justify; padding-top: 10px; line-height: 30px;
+}
+.panel-default > .panel-heading
+{
+	background-color: #fd3c3d; border: 1px solid #ff1011; color: white; padding-top: 20px; padding-bottom: 20px;
+}
+.panel-default > .panel-heading + .panel-collapse > .panel-body
+{
+	background-color: #f2f3f7; border: 1px solid #e3e4e9; border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; padding-left: 0px; padding-right: 0px;
+}
+.panel-group .panel
+{
+	margin-top: 40px; margin-bottom: 20px;
+}
+.panel-default
+{
+	border: 0px;
+}
+.panel
+{
+	box-shadow: 0px 0px 0px;
+}
+.drop-down
+{
+	width: 100%; text-align: left; color: #fd3c3d; height: 45px; margin-bottom: 10px;
+}
+.drop-down-hover
+{
+	width: 100%; 
+}
+.caret-right
+{
+	float: right; margin-top: -10px; color: #fd3c3d;
+}
+.form-control
+{
+	height: 50px; margin-top: 10px; color: #fd3c3d; border: 1px solid #d8dbe2;
+}
+.border
+{
+	width: 100%; height: 1px; background-color: #d8dbe2; margin-top: 20px;
+}
+.add-warm-up-box
+{
+	width: 100%; background-color: white; border: 1px solid #d8dbe2; border-radius: 4px; margin-top: 20px; padding-top: 10px; padding-bottom: 10px; padding-left: 10px; padding-right: 10px;
+}
+.select-icon
+{
+	margin-top: 20px;
+}
+.left-padding
+{
+	padding-left: 0px;
+}
+.padding
+{
+	padding-left: 0px; padding-right: 0px;
+}
+.warm-up-video
+{
+	width: 100%; margin-bottom: 10px;
+}
+.select-btn
+{
+	background-color: #20232a; padding-left: 40px; padding-right: 40px; padding-top: 15px; padding-bottom: 15px; color: white; font-size: 14px; font-weight: bold; text-transform: none; text-align: center; border: 0px; border-radius: 4px; margin-top: 10px; letter-spacing: 2px;
+}
+.select-btn:hover
+{
+	background-color: #fd3c3d;
+}
+.workout-btn
+{
+	background-color: #fd3c3d; padding-left: 50px; padding-right: 50px; padding-top: 20px; padding-bottom: 20px; color: white; font-size: 16px; font-weight: bold; text-transform: uppercase; text-align: center; border: 0px; border-radius: 4px; margin-top: 10px; letter-spacing: 2px; margin-bottom: 20px;
+}
+.workout-btn:hover
+{
+	background-color: #20232a;
+}
+/*-------- Add Drills Popup css Style End -------- */
+
+
+/*-------- Preview Workout Popup css Style Start -------- */
+.preview-workout-popup-bg
+{
+	width: 100%; background-color: white; border-radius: 4px; padding-top: 30px; padding-bottom: 10px; box-shadow: 0px 0px 5px #000; margin-top: 20px; padding-left: 20px; padding-right: 20px;
+}
+.preview-heading h2
+{
+	font-size: 36px; color: #fd3c3d; text-transform: uppercase; letter-spacing: 2px; padding: 0px; margin: 0px; text-align: center; font-weight: 900;
+}
+.preview-heading h2 span
+{
+	font-size: 36px; color: #2c2c2c; text-transform: uppercase; letter-spacing: 2px; padding: 0px; margin: 0px; text-align: center; font-weight: bold;
+}
+.preview-heading h3
+{
+	font-size: 18px; color: #fd3c3d; text-transform: uppercase; letter-spacing: 2px; padding: 0px; margin: 0px; text-align: left; font-weight: normal; padding-top: 20px;
+}
+.preview-heading h3 span
+{
+	font-size: 18px; color: #20232a; text-transform: uppercase; letter-spacing: 2px; padding: 0px; margin: 0px; text-align: left; font-weight: normal;
+}
+.preview-heading p
+{
+	font-size: 14px; color: #393939; text-transform: none; letter-spacing: 2px; padding: 0px; margin: 0px; text-align: left; font-weight: normal; padding-top: 10px; line-height: 40px;
+}
+.preview-heading h4
+{
+	font-size: 18px; color: #fd3c3d; text-transform: uppercase; letter-spacing: 2px; padding: 0px; margin: 0px; text-align: left; font-weight: normal;
+}
+.preview-warm-up-image
+{
+	margin-top: 20px; width: 100%;
+}
+.border-bottom
+{
+	width: 100%; height: 1px; background-color: #e8e8e8; margin-top: 30px; margin-bottom: 30px;
+}
+.preview-video
+{
+	width: 100%;
+}
+.preview-video-tital-bg
+{
+	width: 100%; border: 1px solid #dee0e5; border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top: 0px; padding-top: 15px; padding-bottom: 15px; padding-left: 15px; padding-right: 15px; text-align: left;
+}
+.select-btn
+{
+	background-color: #fd3c3d; padding-left: 35px; padding-right: 35px; padding-top: 20px; padding-bottom: 20px; color: white; font-size: 12px; font-weight: 900; text-transform: uppercase; text-align: center; border: 0px; border-radius: 4px; margin-top: 30px; letter-spacing: 2px; margin-bottom: 20px; margin-right: 10px;
+}
+.select-btn:hover
+{
+	background-color: #20232a;
+}
+/*-------- Preview Workout Popup css Style End -------- */

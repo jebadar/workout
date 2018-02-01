@@ -1,0 +1,20 @@
+<div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div class="modal-title">
+          <strong>Add Template Type</strong>
+        </div>
+      </div>
+      
+        <div class="modal-body">
+          <input class="form-control" type="text"  name="title" [(ngModel)]="type.title" placeholder="Template type title...">
+        </div>
+        
+        <div class="modal-footer">
+          <button *ngIf="!loading" type="button" class="btn btn-primary" (click)="submit()">Save</button>
+          <button *ngIf="!loading" type="button" class="btn btn-default" (click)="close()">Cancel</button>
+          <loader-component *ngIf="loading" width="30"></loader-component>
+        </div>
+      
+    </div>
+  </div>

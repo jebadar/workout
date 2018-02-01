@@ -1,0 +1,11 @@
+<div class="text-center">
+  <h2>Let’s build a <span>workout</span></h2>
+</div>
+<div class="text-center">
+  <button  (click)="startQuickWorkout()" class="workout-button">WORKOUT IN SECONDS</button>
+  <button (click)="showReg()" type="submit" class="workout-button">Diy Workout</button>
+</div>
+
+<app-quick-workout *ngIf="showQuick" [close]="closeQuickWorkout"></app-quick-workout>
+<!-- <login-register-component [close]="closeReg"></login-register-component> -->
+<add-diy-workout-component *ngIf="showRegister" [close]="closeReg"></add-diy-workout-component>

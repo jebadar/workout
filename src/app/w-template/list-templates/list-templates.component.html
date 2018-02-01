@@ -1,0 +1,102 @@
+<div class="row">
+    <div class="col-md-2">
+        <button class="btn btn-primary" routerLink="/admin/templates/add">Add Template</button>
+    </div>
+    
+    <div class="col-md-10">
+            <form  (ngSubmit)="f.form.valid" #f="ngForm" novalidate>
+            <div class="row">
+                    <div class="col-md-3">
+                            <label for="name">Name:</label>
+                            <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" [(ngModel)]="name" name="name" placeholder="Name">
+                    </div>
+                    <div class="col-md-3">
+                            <label for="templateType">Template Type:</label>
+                            <select class="form-control" type="text" id="templateType" [(ngModel)]="type" name="templateType">
+                                <option value=null>All template types</option>
+                                <option *ngFor="let templateType of templateTypes" value="{{templateType.id}}">{{templateType.title}}</option>
+                            </select>
+                    </div>
+                    <div class="col-md-3">
+                            <label for="durations">Duration:</label>
+                            <select class="form-control" type="text" id="durations" [(ngModel)]="selectedDurations" name="durations">
+                                    <option value=null>All Durations</option>
+                                    <option *ngFor="let duration of durations" value="{{duration.id}}">{{duration.minutes}}</option>
+                            </select>
+                            <!-- <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="inlineFormInput" [(ngModel)]="duration_from" name="duration_from" placeholder="From"><br />
+                            <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="inlineFormInput" [(ngModel)]="duration_to" name="duration_to" placeholder="To"> -->
+                            <br /><br />
+                    </div>
+                    
+                    <div class="col-md-3">
+                            <label for="button">&nbsp;</label>
+                            <button *ngIf="!loading" type="submit" class="btn btn-block btn-primary" (click)="searchTemplate()"><i class="fa fa-search" aria-hidden="true">Search</i></button>
+                            <button *ngIf="loading" disabled type="submit" class="btn btn-block btn-primary" ><i class="fa fa-search" aria-hidden="true">Search</i></button>
+                            
+                    </div>
+                </div>
+            </form>
+    </div>
+
+</div>
+
+
+
+
+
+
+<div class="row" data-infinite-scroll [infiniteScrollDistance]="1" [infiniteScrollThrottle]="300" (scrolled)="onScroll()">
+    <div class="col-md-12">
+            <div class="card">
+                    <div class="card-block">
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-hovered ">
+                                    <thead>
+                                        <tr>
+                                            <th width="10%" class="text-center">#</th>
+                                            <th width="30%" class="text-center">Name</th>
+                                            <th width="20%" class="text-center">Type</th>
+                                            <th width="10%" class="text-center">Duration</th>
+                                            <th width="10%" class="text-center">Drills</th>
+                                            <th width="20%" class="text-center">&nbsp;</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngIf="!loading && templates.length==0">
+                                            <td colspan="6" class="text-center">
+                                                No templates found.
+                                            </td>
+                                        </tr>
+                                        <tr *ngFor='let template of templates;let counter=index;'>
+                                            <td class="text-center">{{counter+1}}</td>
+                                            <td class="text-center">{{template.name}}</td>
+                                            <td class="text-center">{{template.type.title}}</td>
+                                            <td class="text-center" *ngIf="template.templateduration">{{template.templateduration.minutes}}</td>
+                                            <td class="text-center" *ngIf="!template.templateduration">N/A</td>
+                                            <td class="text-center">{{template.number_of_drills}}</td>
+                                            <td class="text-center">
+                                                <loader-component *ngIf="template.deleting" [width]="25"></loader-component>
+                                                <span *ngIf="!template.deleting" class="badge badge-primary" style="cursor:pointer;" routerLink="/admin/templates/edit/{{template.id}}">
+                                                    <i aria-hidden="true" class="fa fa-pencil"></i>Edit
+                                                </span>
+                                                <span *ngIf="!template.deleting" class="badge badge-danger" style="cursor:pointer;" (click)="deleteTamplate(template.id)">
+                                                    <i aria-hidden="true" class="fa fa-pencil"></i>Delete
+                                                </span>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div *ngIf="loadMoreCheck" style="text-align: center;" class="col-md-12">
+                                <label for="label">No more results</label>
+                            </div>
+                                <div *ngIf="loading">
+                                    <loader-component [width]="80"></loader-component>
+                                </div>
+                        </div>
+        
+                    </div>
+                </div>
+    </div>
+</div>

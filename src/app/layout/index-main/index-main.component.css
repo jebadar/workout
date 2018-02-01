@@ -1,0 +1,949 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700,900');
+/*
+
+Workout Builder Pro
+
+*/
+
+/*-------- Body Style Start -------- */
+body
+{
+	font-family: 'Lato', sans-serif; font-size: 14px; background-color: white; 
+}
+/*-------- Body Style End -------- */
+
+/*-------- Heading Style Start -------- */
+h1
+{
+	font-size: 65px; color: white; text-transform: uppercase; font-weight: bold; line-height: 80px; text-align: center; letter-spacing: 10px;
+}
+h1 span
+{
+	font-size: 65px; color: #fd3c3d; text-transform: uppercase; font-weight: 900;
+}
+h2
+{
+	font-size: 36px; color: #20232a; text-transform: uppercase; font-weight: bold; text-align: center; letter-spacing: 5px; padding-top: 50px;
+}
+h2 span
+{
+	font-size: 36px; color: #fd3c3d; text-transform: uppercase; font-weight: 900;
+}
+h3
+{
+	font-size: 42px; color: #fff; font-weight: 900; text-transform: uppercase; line-height: 80px; padding-top: 30px;
+}
+h3 span
+{
+	font-size: 42px; color: #fd3c3d; font-weight: 900;
+}
+h4
+{
+	font-size: 36px; color: #fd3c3d; text-transform: uppercase; font-weight: 900; letter-spacing: 5px;
+}
+h4 span
+{
+	font-size: 36px; color: #20232a; text-transform: uppercase; font-weight: bold; letter-spacing: 5px;
+}
+h5
+{
+	font-size: 24px; color: #20232a; text-transform: uppercase; font-weight: 500; letter-spacing: 3px; padding-top: 20px; line-height: 30px;
+}
+h5 span
+{
+	font-size: 30px; color: #9d0303; text-transform: uppercase; font-weight: bold;
+}
+h6
+{
+	font-size: 16px; color: #fd3c3d; text-transform: uppercase; font-weight: 500; padding-top: 10px; padding-left: 15px; padding-right: 15px;
+}
+h6 span
+{
+	font-size: 14px; color: #1e1e1e; text-transform: uppercase; font-weight: 400; padding-top: 5px !important;
+}
+p
+{
+	font-size: 16px; color: #464646; line-height: 30px; text-align: justify; font-weight: normal!important; padding-top: 20px;
+}
+/*-------- Heading Style End -------- */
+
+/*-------- Index Css Style Start -------- */
+.clear
+{
+	clear:both;
+}
+
+
+
+/*-------- Index Css Style Start -------- */
+
+
+/*-------- Top Search Css Style Start -------- */
+.top-bg
+{
+	background-color: #20232a; width: 100%; padding-top: 5px; padding-bottom: 0px;
+}
+.navbar-form .form-control
+{
+	background-color: #15171c; border: 0px; height: 38px; border-top-right-radius: 0px; border-bottom-right-radius: 0px; color: #fff;
+}
+.btn-default
+{
+	background-color: #fd3c3d; border: 0px; border-top-left-radius: 0px; border-bottom-left-radius: 0px;
+}
+.btn-default:hover
+{
+	background-color: #15171c; border: 0px;
+}
+.profilebg-1
+{
+	background-color: #fd3c3d; margin-top: 40px; width: 100%; padding-top: 17px; padding-bottom: 17px; text-align: center;
+}
+.profilebg-1-heading h5
+{
+	font-size: 20px; color: #fff; font-weight: bold; text-transform: uppercase; margin: 0px; padding: 0px; letter-spacing: 3px; text-align: center;
+}
+.mobile-icon
+{
+	margin-top: 10px; float: left;
+}
+.mobile p
+{
+	color: white; padding: 0px; padding-top: 8px; font-size: 14px;
+}
+/*-------- Top Search Css Style End -------- */
+
+
+/*-------- Top Navigation Css Style Start -------- */
+.navbar-default
+{
+	background-color: #fd3c3d; border: 0px; border-radius: 0px; margin-bottom: 0px;
+}
+.navbar-nav > li
+{
+	padding-left: 30px; padding-right: 30px;
+}
+.navbar-default .navbar-nav > li > a
+{
+	color: white;
+}
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus
+{
+	background-color: #20232a; color: white;
+}
+.logo
+{
+	width: 100%; margin-top: 0px;
+}
+.navbar-default .navbar-toggle
+{
+	border-color: white;
+}
+.navbar-default .navbar-toggle .icon-bar
+{
+	background-color: white;
+}
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus
+{
+	background-color: #20232a;
+}
+/*-------- Top Navigation Css Style End -------- */
+
+
+/*-------- Banner Css Style Start -------- */
+.banner
+{
+	background-image: url(../../../assets/images/banner-image.jpg); width: 100%; padding-top: 100px; padding-bottom: 100px;
+}
+.banner-information p
+{
+	font-size: 16px; color: white; text-align: center; padding-top: 20px; line-height: 30px; letter-spacing: 3px;
+}
+.banner-btn
+{
+	background-color: #fd3c3d; padding-left: 40px; padding-right: 40px; padding-top: 20px; padding-bottom: 20px; color: white; font-size: 16px; font-weight: bold; text-transform: uppercase; text-align: center; border: 0px; border-radius: 4px; margin-top: 50px; letter-spacing: 2px;
+}
+.banner-btn:hover
+{
+	background-color: #20232a;
+}
+.banner-bottom-border
+{
+	border: 5px solid #fd3c3d; width: 100%;
+}
+.float
+{
+	float: left;
+}
+.work-padding
+{
+	padding-right: 0px;
+}
+/*-------- Banner Css Style End -------- */
+
+
+/*-------- Login Css Style Start -------- */
+.login-bg
+{
+	background-color: #f2f3f7; width: 100%; padding-top: 15px; padding-bottom: 15px; border: 1px solid #d8dae1;
+}
+.form-control
+{
+	height: 50px; color: #b6b6b6; border: 1px solid #b6b6b6;
+}
+.login-button
+{
+	background-color: #fd3c3d; color: white; padding-left: 27px !important; padding-right: 27px !important; padding-top: 14px; padding-bottom: 15px; text-transform: uppercase; font-size: 14px; font-weight: 800; border: 0px; border-radius: 4px; float: left; margin-right: 35px;
+}
+.login-button:hover
+{
+	background-color: #20232a;
+}
+/*-------- Login Css Style End -------- */
+
+
+
+/*-------- Training Css Style Start -------- */
+.training-bg
+{
+	width: 100%; background-image: url(../../../assets/images/training-image.jpg); margin-top: 50px; padding-top: 100px; padding-bottom: 100px; margin-bottom: 50px;
+}
+.training-information p
+{
+	color: white; text-align: left; text-transform: uppercase;
+}
+/*-------- Training Css Style End -------- */
+
+
+/*-------- Fitness Css Style Start -------- */
+.fitness-information p
+{
+	color: #20232a; line-height: 30px; padding-top: 20px; letter-spacing: 2px;
+}
+.fitness-image
+{
+	width: 100%;
+}
+/*-------- Fitness Css Style End -------- */
+
+
+/*-------- Client Css Style Start -------- */
+.padding
+{
+	padding-top: 80px;
+}
+.client-box
+{
+	width: 100%; background-color: #f2f3f7; border-radius: 4px; margin-top: 50px; border: 1px solid #dee0e5;  padding-bottom: 30px;
+}
+.client-image
+{
+	width: 100%;
+}
+.client-information p
+{
+	color: #7d7d7d; padding-top: 5px; padding-left: 15px; padding-right: 15px; padding-bottom: 10px; font-size: 12px; letter-spacing: 2px;
+}
+.coach-image
+{
+	margin-left: 15px; float: left;
+}
+.coach h2
+{
+	font-size: 12px; color: #fd3c3d; text-transform: none; padding: 0px; letter-spacing: 1px; float: left; padding-left: 10px; padding-top: 10px; line-height: 20px;
+}
+.coach h2 span
+{
+	font-size: 12px; color: #434343; text-transform: none; padding: 0px; letter-spacing: 1px; float: left;
+}
+/*-------- Client Css Style End -------- */
+
+
+/*-------- Pricing Css Style Start -------- */
+.pricing-bg
+{
+	width: 100%; background-color: #f2f3f7; margin-top: 60px; padding-top: 40px; border: 1px solid #dee0e5; margin-bottom: 40px;
+}
+.pricing-image
+{
+	width: 100%;
+}
+.pricing h2
+{
+	font-size: 30px; color: #20232a; text-transform: uppercase; letter-spacing: 2px; text-align: left; font-weight: bold; padding-top: 0px;
+}
+.pricing h2 span
+{
+	font-size: 30px; color: #fd3c3d; text-transform: uppercase; letter-spacing: 2px; text-align: left; font-weight: 900;
+}
+.pricing p
+{
+	font-size: 16px; color: #747a91; text-transform: uppercase; letter-spacing: 2px; text-align: left; font-weight: bold; padding: 0px;
+}
+/*-------- Pricing Css Style End -------- */
+
+
+/*-------- Footer Css Style Start -------- */
+.footer-bg
+{
+	background-color: #20232a; width: 100%; margin-top: 40px; padding-top: 20px; padding-bottom: 20px;
+}
+.footer h2
+{
+	font-size: 24px; color: white; text-transform: uppercase; letter-spacing: 2px; padding-top: 0px; text-align: left; 
+}
+.nav-col 
+{
+	margin: 10px 0 0 0; padding: 0px;
+}
+.nav-col ul 
+{
+    float: left; margin: 0px; padding: 0px;
+}
+.nav-col ul li 
+{
+    list-style: none; width: 100%; float: left;
+}
+.nav-col ul li a 
+{
+    width: 100%; line-height: 45px; font-size: 16px; color: #d1d1d1; padding: 0 0 0 0px; text-transform: uppercase;
+}
+.nav-col ul li a:hover
+{
+	color: #fd3c3d;
+}
+.newsletter-bg
+{
+	background-color: #fd3c3d; width: 100%; padding-top: 20px; padding-bottom: 20px;
+}
+.newsletter h2
+{
+	font-size: 30px; color: #20232a; text-transform: uppercase; letter-spacing: 2px; padding: 0px;
+}
+.newsletter h2 span
+{
+	font-size: 30px; color: white; text-transform: uppercase; letter-spacing: 2px;
+}
+.form-control-footer
+{
+	background-color: #da1c1d; color: #8a0001; font-size: 14px; letter-spacing: 2px; border: 0px; border-radius: 4px; height: 50px; padding-left: 15px; width: 100%; margin-top: 20px;
+}
+.newsletter-button
+{
+	background-color: #da1c1d; color: #9d090a; padding-left: 35px; padding-right: 35px; padding-top: 12px; padding-bottom: 12px; text-transform: uppercase; font-size: 18px; font-weight: 800; border: 0px; border-radius: 4px; letter-spacing: 5px; margin-top: 20px; margin-right: 50px; margin-bottom: 0px;
+}
+.newsletter-button:hover
+{
+	background-color: #fff; color: #fd3c3d;
+}
+.fb-icon
+{
+	margin-top: 30px; margin-bottom: 30px; margin-right: 20px;
+}
+.copyright-bg
+{
+	background-color: #20232a; width: 100%; padding-top: 10px; padding-bottom: 5px;
+}
+.copyright p
+{
+	font-size: 14px; color:  white; text-transform: uppercase; letter-spacing: 2px; padding: 0px; text-align: center;
+} 
+#dummyPara > p {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;     /* fallback */
+	max-height: 100%;      /* fallback */
+	-webkit-line-clamp: 8; /* number of lines to show */
+	-webkit-box-orient: vertical;
+	width: 100%;
+ }
+
+/*-------- Footer Css Style End -------- */
+
+
+/*-------- Index Css Style End -------- */
+
+
+
+/*-------- Member Profile Css Style Start -------- */
+
+
+/*-------- Banner Css Style Start -------- */
+.profile-banner
+{
+	background-image: url(../../../assets/images/members-banner-image.jpg); background-repeat: no-repeat; background-attachment: scroll; background-position: center center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; width: 100%; padding-top: 50px; padding-bottom: 50px;
+}
+/*-------- Banner Css Style End -------- */
+
+/*-------- Profile Css Style Start -------- */
+.profile-bg
+{
+	width: 100%; background-color: #f2f3f7; border: 1px solid #e5e7eb; margin-top: 40px; padding-top: 20px; padding-bottom: 20px; margin-bottom: 30px;
+}
+.profile-name h2
+{
+	font-size: 18px; color: #535353; text-transform: uppercase; font-weight: normal; letter-spacing: 2px; padding: 0px;
+}
+.profile-name h2 span
+{
+	font-size: 14px; color: #999999; text-transform: uppercase; font-weight: normal; letter-spacing: 2px; padding: 0px;
+}
+.border
+{
+	width: 100%; height: 1px; background-color:  #e5e7eb; margin-top: 30px; margin-bottom: 10px;
+}
+.profile-name h3
+{
+	font-size: 16px; color: #fd3c3d; text-transform: uppercase; font-weight: normal; letter-spacing: 2px; padding: 0px; margin: 0px; padding-left: 15px; padding-right: 15px; line-height: 50px;
+}
+.profile-name h4
+{
+	font-size: 14px; color: #3f3f3f; text-transform: uppercase; font-weight: normal; letter-spacing: 2px; padding: 0px; margin: 0px; padding-left: 15px; padding-right: 15px; padding-bottom: 10px;
+}
+.profile-name h4 span
+{
+	font-size: 14px; color: #888888; text-transform: none; font-weight: normal; letter-spacing: 2px; padding: 0px; margin: 0px;
+}
+.nav-tabs > li
+{
+	margin-top: 60px;
+}
+.nav-tabs > li > a
+{
+	background-color: #20232a; color: white; text-transform: uppercase; font-size: 18px; padding-left: 137px; padding-right: 137px; padding-top: 20px; padding-bottom: 20px;
+}
+.nav-tabs > li > a:hover
+{
+	background-color: #fd3c3d;
+}
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus
+{
+	background-color: #fd3c3d; border: 0px; color: white;
+}
+.profile-workout-bg
+{
+	width: 100%; background-color: #f2f3f7; border: 1px solid #e5e7eb; margin-top: 0px; padding-top: 20px; padding-bottom: 20px;
+}
+.user-pro-banner
+{
+	padding-top: 30px !important; padding-bottom: 30px !important;
+}
+.workout-box
+{
+	width: 100%; background-color: white; margin-bottom: 20px;
+}
+.workout-image
+{
+	width: 100%;
+}
+.workout-heading h2
+{
+	font-size: 16px; color: #fd3c3d; padding-left: 15px; padding-right: 15px; text-transform: uppercase; letter-spacing: 2px; font-weight: normal; padding-top: 15px; margin: 0px; text-align: left; padding-bottom: 15px;
+}
+.workout-heading p
+{
+	font-size: 12px; color: #6b6c6e; padding-left: 15px; padding-right: 15px; letter-spacing: 2px; padding-top: 0px; margin: 0px; padding-bottom: 15px;
+}
+.profile-workout-button
+{
+	background-color: #fd3c3d; color: white; padding-left: 43px; padding-right: 44px; padding-top: 14px; padding-bottom: 15px; text-transform: uppercase; font-size: 12px; font-weight: 400; border: 0px; border-radius: 4px; float: left; margin-right: 0px; margin-left: 15px; margin-bottom: 15px;
+}
+.profile-workout-button:hover
+{
+	background-color: #20232a;
+}
+.pagination > li > a, .pagination > li > span
+{
+	color: #20232a;
+}
+.pagination > li > a:hover, .pagination > li > span:hover, .pagination > li > a:focus, .pagination > li > span:focus
+{
+	color: #fff; background-color: #fd3c3d; border-color: #fd3c3d;
+}
+.payment-box
+{
+	width: 100%; background-color: #fd3c3d; border-radius: 4px; text-align: center; margin-top: 0px; padding-top: 10px; padding-bottom: 10px; padding-left: 5px; padding-right: 5px; border: 1px solid #fc1e1f;
+}
+.payment-detail-box
+{
+	width: 100%; background-color: #fff; border-radius: 4px; text-align: center; padding-top: 10px; padding-bottom: 10px; padding-left: 10px; padding-right: 10px; border: 1px solid #e5e7eb; margin-top: 10px; margin-bottom: 10px;
+}
+.workout-search
+{
+	margin-bottom: 20px;
+}
+.payment-heading h2
+{
+	font-size: 12px; color: white; letter-spacing: 1px; text-transform: uppercase; font-weight: bold; padding: 0px; margin: 0px;
+}
+.payment-heading h2 span
+{
+	font-size: 12px; color: #20232a; letter-spacing: 1px; text-transform: uppercase; font-weight: bold; padding: 0px; margin: 0px;
+}
+/*-------- Profile Css Style End -------- */
+
+/*-------- Member Profile Css Style End -------- */
+
+
+/*-------- Diy Workout Css Style Start -------- */
+.diy-heading h2
+{
+	font-size: 36px; color: #2c2c2c; font-weight: bold; text-transform: uppercase; letter-spacing: 4px; text-align: center;
+}
+.diy-heading h2 span
+{
+	font-size: 36px; color: #fd3c3d; font-weight: 900; text-transform: uppercase; letter-spacing: 4px; text-align: center;
+}
+.no-drills-bg
+{
+	background-color: #f2f3f7; border: 1px solid #dee0e5; padding-left: 5px; padding-right: 5px; padding-top: 15px; padding-bottom: 15px; margin-top: 50px; text-align: center; float: left; border-top-left-radius: 4px; border-bottom-left-radius: 4px; border-right: 0px; width: auto;
+}
+.no-drills-cal-bg
+{
+	background-color: #fd3c3d; border: 1px solid #ff1112; padding-left: 5px; padding-right: 5px; padding-top: 15px; padding-bottom: 15px; margin-top: 50px; border-radius: 4px; text-align: center; border-left: 0px; width: auto;
+}
+.no-drills h2
+{
+	font-size: 18px; color: #2c2c2c; text-transform: uppercase; letter-spacing: 2px; font-weight: normal; padding: 0px; margin: 0px;
+}
+.no-drills h2 span
+{
+	font-size: 18px; color: #fff; text-transform: uppercase; letter-spacing: 2px; font-weight: 900; padding: 0px; margin: 0px;
+}
+.diy-boxing-box
+{
+	width: 100%; background-color: #f2f3f7; border: 1px solid #dee0e5; padding-top: 20px; padding-bottom: 20px; padding-left: 10px ;padding-right: 10px; margin-top: 40px; border-radius: 4px;
+}
+.boxing-image
+{
+	width: 100%;
+}
+.boxing-preview-button
+{
+	background-color: #fff; color: #fd3c3d; padding-left: 45px; padding-right: 45px; padding-top: 14px; padding-bottom: 15px; text-transform: none; font-size: 16px; font-weight: bold; border-radius: 4px; float: left; width: 100%; border: 1px solid #d4d7df; margin-top: 20px; margin-bottom: 10px;
+}
+.boxing-preview-button:hover
+{
+	background-color: #fd3c3d; color: white; border: 1px solid #ff1213;
+}
+.boxing-preview-button-1
+{
+	background-color: #fd3c3d; color: #fff; padding-left: 45px; padding-right: 45px; padding-top: 14px; padding-bottom: 15px; text-transform: none; font-size: 16px; font-weight: bold; border-radius: 4px; float: left; border: 1px solid #fd3c3d; margin-top: 0px; margin-bottom: 10px; float: right;
+}
+.boxing-preview-button-1:hover
+{
+	background-color: #fff; color: #fd3c3d; border: 1px solid #ff1213;
+}
+.boxing-heading h3
+{
+	font-size: 18px; color: #fd3c3d; text-transform: uppercase; letter-spacing: 4px; padding: 0px; margin: 0px; line-height: 0px; padding-top: 10px;
+}
+.boxing-heading h4
+{
+	font-size: 16px; color: #fd3c3d; text-transform: uppercase; letter-spacing: 2px; padding: 0px; margin: 0px; line-height: 0px; padding-top: 27px; font-weight: normal; 
+}
+.boxing-heading p
+{
+	font-size: 12px; color: #393939; text-transform: none; letter-spacing: 2px; padding: 0px; margin: 0px; line-height: 30px; padding-top: 20px; font-weight: normal;
+}
+.aero
+{
+	margin-top: 20px; float: left; margin-right: 10px; margin-left: 0px;
+}
+.col-p
+{
+	padding-left: 0px;
+}
+.boxing-add
+{
+	width: 100%; border: 3px dashed #dee0e5; padding-top: 40px; padding-bottom: 40px; text-align: center; margin-top: 40px; border-radius: 4px; cursor: pointer;
+}
+.boxing-add:hover
+{
+	width: 100%; border: 3px dashed #fd3c3d; padding-top: 40px; padding-bottom: 40px; text-align: center; margin-top: 40px; border-radius: 4px;
+}
+
+/*-------- Diy Workout Css Style End -------- */
+
+
+/*-------- Workout Final Preview Css Style Start -------- */
+.preview-heading h2
+{
+	font-size: 36px; color: #20232a; text-transform: uppercase; letter-spacing: 2px; padding: 0px; margin: 0px; font-weight: bold; text-align: center; padding-top: 50px;
+}
+.preview-heading h2 span
+{
+	font-size: 36px; color: #fd3c3d; text-transform: uppercase; letter-spacing: 2px; padding: 0px; margin: 0px; font-weight: 900; text-align: center; padding-top: 50px;
+}
+.preview-heading h3
+{
+	font-size: 18px; color: #fd3c3d; text-transform: uppercase; letter-spacing: 2px; padding: 0px; margin: 0px; font-weight: normal; text-align: left; padding-top: 20px;
+}
+.preview-heading h3 span
+{
+	font-size: 18px; color: #20232a; text-transform: uppercase; letter-spacing: 2px; padding: 0px; margin: 0px; font-weight: normal; text-align: left; padding-top: 20px;
+}
+.preview-heading h4
+{
+	font-size: 18px; color: #fd3c3d; text-transform: uppercase; letter-spacing: 2px; padding: 0px; margin: 0px; font-weight: normal; text-align: left;
+}
+.preview-heading p
+{
+	font-size: 13px; color: #393939; text-transform: none; letter-spacing: 2px; padding: 0px; margin: 0px; font-weight: normal; text-align: justify; line-height: 40px;
+}
+.warm-up-preview-image
+{
+	width: 100%; margin-top: 10px;
+}
+.preview-video-image
+{
+	margin-top: 30px; width: 100%;
+}
+.preview-video-title-box
+{
+	width: 100%; background-color: white; border: 1px solid #d4d7df; padding-left: 15px; padding-bottom: 15px; padding-top: 15px; border-bottom-left-radius: 4px; border-bottom-right-radius: 4px;
+	
+}
+.preview-border-bottom
+{
+	width: 100%; background-color: #e3e4e9; height: 1px; margin-top: 50px;
+}
+.previer-bg
+{
+	width: 100%; background-color: #f2f3f7; border: 1px solid #e3e4e9; margin-top: 60px; padding-bottom: 50px;
+}
+.preview-download-button
+{
+	background-color: #fd3c3d; color: white; padding-left: 40px; padding-right: 40px; padding-top: 20px; padding-bottom: 20px; text-transform: uppercase; font-size: 16px; font-weight: normal; border: 0px; border-radius: 4px; letter-spacing: 2px; margin-top: 40px; margin-right: 50px; margin-bottom: 20px; text-align: center;
+}
+.preview-download-button:hover
+{
+	background-color: #20232a;
+}
+.form-control-height{
+	height:40px !important;
+}
+.nav-form-control
+{
+	width: 45% !important; float: left; padding: 1.1rem .75rem;
+}
+.bg-light
+{
+	background-color: #fd3c3d !important;
+    border: 0px;
+    border-radius: 0px;
+    margin-bottom: 0px;
+}
+.navbar-light .navbar-nav .nav-link
+{
+	color: white; text-transform: uppercase;
+}
+.register-h3{
+	font-size: 24px!important;
+	color: #fd4e4f !important;
+    font-weight: 900 !important;
+	text-transform: uppercase;
+	padding-top: 0 !important;
+	line-height: 0 !important;
+}
+.navbar-expand-lg .navbar-collapse
+{
+	flex-basis: none;
+}
+.navbar-brand
+{
+	padding-top: 0rem;
+}
+.navbar-nav li{
+padding-left: 35px;
+padding-right: 20px;
+}
+.form-group
+{
+	margin-bottom: 0rem !important;
+}
+/*-------- Workout Final Preview Css Style End -------- */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*-------- Media Query Css Style Start -------- */
+
+/*-------- Media Query Css Style Start (1024px) -------- */
+@media (max-width: 1024px)
+{
+	
+}
+/*-------- Media Query Css Style End (1024px) -------- */
+
+/*-------- Media Query Css Style Start (768px) -------- */
+@media (max-width: 768px)
+{
+	.nav-tabs > li > a
+	{
+	background-color: #20232a; color: white; text-transform: uppercase; font-size: 18px; padding-left: 65px; padding-right: 65px;
+	}	
+	.no-drills-bg
+	{
+	background-color: #f2f3f7; border: 1px solid #dee0e5; padding-left: 5px; padding-right: 5px; padding-top: 15px; padding-bottom: 15px; margin-top: 50px; text-align: center; float: left; width: 100%;
+	}
+	.no-drills-cal-bg
+	{
+	background-color: #fd3c3d; border: 1px solid #ff1112; padding-left: 5px; padding-right: 5px; padding-top: 15px; padding-bottom: 15px; margin-top: 10px; border-radius: 4px; text-align: center; width: 100%; float: left;
+	}
+	h1
+	{
+	font-size: 45px; color: white; text-transform: uppercase; font-weight: bold; line-height: 50px; text-align: center;
+	}
+	h1 span
+	{
+	font-size: 45px; color: #fd3c3d; text-transform: uppercase; font-weight: 900;
+	}
+}
+/*-------- Media Query Css Style End (768px) -------- */
+
+
+/*-------- Media Query Css Style Start (720px) -------- */
+@media (max-width: 720px)
+{
+	.nav-tabs > li > a
+	{
+	background-color: #20232a; color: white; text-transform: uppercase; font-size: 18px; padding-left: 120px; padding-right: 120px;
+	}
+	.form-control
+	{
+	height: 50px; color: #b6b6b6; border: 1px solid #b6b6b6; margin-bottom: 10px;
+	}
+	.navbar-form .form-group:last-child
+	{
+		width: 100%;
+	}
+	.navbar-form .form-control
+	{
+		width: 83%; float: left;
+	}
+	.login-button
+	{
+	background-color: #fd3c3d; color: white; padding-left: 27px; padding-right: 27px; padding-top: 14px; padding-bottom: 15px; text-transform: uppercase; font-size: 14px; font-weight: 800; border: 0px; border-radius: 4px; float: left; margin-right: 2px;
+	}
+	.login-button:hover
+	{
+	background-color: #20232a;
+	}
+	.no-drills-bg
+	{
+	background-color: #f2f3f7; border: 1px solid #dee0e5; padding-left: 5px; padding-right: 5px; padding-top: 15px; padding-bottom: 15px; margin-top: 50px; text-align: center; float: left; width: 100%;
+	}
+	.no-drills-cal-bg
+	{
+	background-color: #fd3c3d; border: 1px solid #ff1112; padding-left: 5px; padding-right: 5px; padding-top: 15px; padding-bottom: 15px; margin-top: 10px; border-radius: 4px; text-align: center; width: 100%; float: left;
+	}
+	h1
+	{
+	font-size: 37px; color: white; text-transform: uppercase; font-weight: bold; line-height: 50px; text-align: center;
+	}
+	h1 span
+	{
+	font-size: 37px; color: #fd3c3d; text-transform: uppercase; font-weight: 900;
+	}
+}
+/*-------- Media Query Css Style End (720px) -------- */
+
+/*-------- Media Query Css Style Start (480px) -------- */
+@media (max-width: 480px)
+{
+	.logo
+	{
+		max-width: 70%; margin-top: 20px; margin-left: 10px;
+	}
+	.form-control
+	{
+	height: 50px; color: #b6b6b6; border: 1px solid #b6b6b6; margin-bottom: 10px;
+	}
+	.login-button
+	{
+	background-color: #fd3c3d; color: white; padding-left: 43px; padding-right: 44px; padding-top: 14px; padding-bottom: 15px; text-transform: uppercase; font-size: 14px; font-weight: 800; border: 0px; border-radius: 4px; float: left; margin-right: 2px;
+	}
+	.login-button:hover
+	{
+	background-color: #20232a;
+	}
+	.nav-tabs > li > a
+	{
+	background-color: #20232a; color: white; text-transform: uppercase; font-size: 18px; padding-left: 21px; padding-right: 22px;
+	}
+	.no-drills-bg
+	{
+	background-color: #f2f3f7; border: 1px solid #dee0e5; padding-left: 5px; padding-right: 5px; padding-top: 15px; padding-bottom: 15px; margin-top: 50px; text-align: center; float: left; width: 100%;
+	}
+	.no-drills-cal-bg
+	{
+	background-color: #fd3c3d; border: 1px solid #ff1112; padding-left: 5px; padding-right: 5px; padding-top: 15px; padding-bottom: 15px; margin-top: 10px; border-radius: 4px; text-align: center; width: 100%; float: left;
+	}
+	h1
+	{
+	font-size: 22px; color: white; text-transform: uppercase; font-weight: bold; line-height: 50px; text-align: center;
+	}
+	h1 span
+	{
+	font-size: 22px; color: #fd3c3d; text-transform: uppercase; font-weight: 900;
+	}
+}
+/*-------- Media Query Css Style End (480px) -------- */
+
+/*-------- Media Query Css Style Start (360px) -------- */
+@media (max-width: 360px) 
+{
+	h1
+	{
+	font-size: 12px; color: white; text-transform: uppercase; font-weight: bold; line-height: 50px; text-align: center;
+	}
+	h1 span
+	{
+	font-size: 12px; color: #fd3c3d; text-transform: uppercase; font-weight: 900;
+	}
+	.navbar-form .form-group:last-child
+	{
+		width: 100%;
+	}
+	.navbar-form .form-control
+	{
+		width: 83%; float: left;
+	}
+	.logo
+	{
+		max-width: 70%; margin-top: 20px; margin-left: 10px;
+	}
+	.form-control
+	{
+	height: 50px; color: #b6b6b6; border: 1px solid #b6b6b6; margin-bottom: 10px;
+	}
+	.login-button
+	{
+	background-color: #fd3c3d; color: white; padding-left: 43px; padding-right: 44px; padding-top: 14px; padding-bottom: 15px; text-transform: uppercase; font-size: 14px; font-weight: 800; border: 0px; border-radius: 4px; float: left; margin-right: 2px;
+	}
+	.login-button:hover
+	{
+	background-color: #20232a;
+	}
+	.nav-tabs > li > a
+	{
+	background-color: #20232a; color: white; text-transform: uppercase; font-size: 18px; padding-left: 21px; padding-right: 22px;
+	}
+	.no-drills-bg
+	{
+	background-color: #f2f3f7; border: 1px solid #dee0e5; padding-left: 5px; padding-right: 5px; padding-top: 15px; padding-bottom: 15px; margin-top: 50px; text-align: center; float: left; width: 100%;
+	}
+	.no-drills-cal-bg
+	{
+	background-color: #fd3c3d; border: 1px solid #ff1112; padding-left: 5px; padding-right: 5px; padding-top: 15px; padding-bottom: 15px; margin-top: 10px; border-radius: 4px; text-align: center; width: 100%; float: left;
+	}
+}
+/*-------- Media Query Css Style End (360px) -------- */
+
+/*-------- Media Query Css Style Start (320px) -------- */
+@media (max-width: 320px) 
+{
+	.nav-tabs > li > a
+	{
+	background-color: #20232a; color: white; text-transform: uppercase; font-size: 18px; padding-left: 21px; padding-right: 22px;
+	}
+	h1
+	{
+	font-size: 12px; color: white; text-transform: uppercase; font-weight: bold; line-height: 50px; text-align: center;
+	}
+	h1 span
+	{
+	font-size: 12px; color: #fd3c3d; text-transform: uppercase; font-weight: 900;
+	}
+	.navbar-form .form-group:last-child
+	{
+		width: 100%;
+	}
+	.navbar-form .form-control
+	{
+		width: 83%; float: left;
+	}
+	.logo
+	{
+		max-width: 70%; margin-top: 20px; margin-left: 10px;
+	}
+	.form-control
+	{
+	height: 50px; color: #b6b6b6; border: 1px solid #b6b6b6; margin-bottom: 10px;
+	}
+	.workout-button
+	{
+	background-color: #fd3c3d; color: white; padding-left: 50px; padding-right: 50px; padding-top: 20px; padding-bottom: 20px; text-transform: uppercase; font-size: 18px; font-weight: 800; border: 0px; border-radius: 4px; letter-spacing: 5px; margin-top: 40px; margin-right: 0px; margin-bottom: 0px;
+	}
+	.workout-button:hover
+	{
+	background-color: #20232a;
+	}
+	.login-button
+	{
+	background-color: #fd3c3d; color: white; padding-left: 43px; padding-right: 44px; padding-top: 14px; padding-bottom: 15px; text-transform: uppercase; font-size: 14px; font-weight: 800; border: 0px; border-radius: 4px; float: left; margin-right: 2px;
+	}
+	.login-button:hover
+	{
+	background-color: #20232a;
+	}
+	.no-drills-bg
+	{
+	background-color: #f2f3f7; border: 1px solid #dee0e5; padding-left: 5px; padding-right: 5px; padding-top: 15px; padding-bottom: 15px; margin-top: 50px; text-align: center; float: left; width: 100%;
+	}
+	.no-drills-cal-bg
+	{
+	background-color: #fd3c3d; border: 1px solid #ff1112; padding-left: 5px; padding-right: 5px; padding-top: 15px; padding-bottom: 15px; margin-top: 10px; border-radius: 4px; text-align: center; width: 100%; float: left;
+	}
+	
+}
+/*-------- Media Query Css Style Start (320px) -------- */
+
+/*-------- Media Query Css Style End -------- */

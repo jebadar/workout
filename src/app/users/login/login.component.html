@@ -1,0 +1,34 @@
+<form class="padding" *ngIf="!resetForm" (ngSubmit)="f.form.valid && login()" #f="ngForm" novalidate>
+  <div class="form-group" [formGroup]="loginForm">
+    <label for="exampleInputEmail1"><div class="login"><h3>Email address</h3></div></label>
+    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email" name="email" formControlName="email">
+  </div>
+  <div class="form-group" [formGroup]="loginForm">
+    <label for="exampleInputPassword1"><div class="login"><h3>Password</h3></div></label>
+    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="password" formControlName="password">
+  </div>
+  <button type="submit" class="login-popup-button"><span *ngIf="!loading">Login</span><span *ngIf="loading">Processing</span></button>
+  <div class="clear"></div>
+  <a (click)="resetEmail()"><span style="float: left; text-transform: uppercase; color: #fd3c3d;" *ngIf="!resetCheck && !loading">Forget Password</span></a>
+
+</form>
+<form class="padding" *ngIf="resetForm && !successReset" (ngSubmit)="f.form.valid && resetSubmit()" #f="ngForm" novalidate>
+    <div class="form-group" [formGroup]="loginForm">
+      <label for="exampleInputEmail1"><div class="login"><h3>Email address</h3></div></label>
+      <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email" name="email" formControlName="email">
+    </div>
+    <button type="submit" class="login-popup-button"><span *ngIf="!loading">Send</span><span *ngIf="loading">Processing</span></button>
+    <div class="clear"> </div>
+    <a (click)="resetEmail()"><span style="float: left; margin-bottom: 20px; text-transform: uppercase; color: #fd3c3d;" *ngIf="!resetCheck && !loading">Cancel</span></a>
+  
+  </form>
+  <div class="row" *ngIf="successReset && !loading">
+      <div class="col-sm-12">
+      <h3 style="padding-top: 20px;text-align: center;text-transform: uppercase;">Email Succesfully sent</h3>
+    </div>
+  </div>
+  <!-- <div class="row" *ngIf="errorReset && !loading">
+      <div class="col-sm-12">
+      <h3 style="text-align: center;">Email Not Found</h3>
+    </div>
+  </div> -->

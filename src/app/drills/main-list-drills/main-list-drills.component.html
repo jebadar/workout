@@ -1,0 +1,97 @@
+<div class="panel-body">
+  <div class="row" style="margin: 0px;">
+    <div class="col-sm-6">
+      <!-- <div class="btn-group drop-down" dropdown role="group"> -->
+        <!-- <button type="button" dropdownToggle class="btn btn-default dropdown-toggle drop-down" role="button" data-toggle="dropdown">
+                          <span>{{minor.name}}</span> 
+                          <span class="caret caret-right"></span>
+                        </button>
+        <ul *dropdownMenu class="dropdown-menu drop-down-hover">
+          <li role="menuitem" (click)="selectMinorCategory(minor,$event)" *ngFor="let minor of majorCategory.drillminors"><a class="dropdown-item"> {{minor.name}}</a></li>
+        </ul> -->
+        <select class="form-control"  style="height: 45px;margin-top: 0px;color: #fd3c3d;" id="minor" (change)="selectMinorCategory($event)" name="minor">
+            <option [value]="null">Minor Category</option>
+            <option *ngFor="let minor of majorCategory.drillminors" value="{{minor.name}}">{{minor.name}}</option>
+        </select>
+      <!-- </div> -->
+    </div>
+    <div class="col-sm-6">
+      <div class="btn-group drop-down" dropdown role="group">
+        <!-- <button type="button" dropdownToggle class="btn btn-default dropdown-toggle drop-down" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="false">
+                          {{sub.name}}
+                          <span class="caret caret-right"></span>
+                        </button>
+        <ul *dropdownMenu class="dropdown-menu drop-down-hover">
+          <li (click)="selectSubCategory(sub,$event)" *ngFor="let sub of subs;let counter=index"><a class="dropdown-item">{{sub.name}}</a></li>
+        </ul> -->
+        <select class="form-control" (change)="selectSubCategory($event)" style="height: 45px;margin-top: 0px;color: #fd3c3d;" type="text" id="templateType" name="sub">
+            <option value=null>Sub Category</option>
+            <option *ngFor="let sub of subs;let counter=index" value="{{sub.name}}">{{sub.name}}</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <!-- <div class="col-sm-12">
+    <input type="text" class="form-control" placeholder="Tag">
+  </div> -->
+  <div class="clear"></div>
+  <div class="border"></div>
+  <div  class="col-sm-12">
+    <div class="add-drills">
+      <h4 *ngIf="drills.length > 0">{{drills.length}}<span> Workouts</span></h4>
+      <loader-red *ngIf="loading"></loader-red>
+    </div>
+  </div>
+  <div *ngIf="minor.id == null && sub.id == null"  class="col-sm-12">
+      <div class="add-drills">
+        <h4><span>Select Minor and Sub category</span></h4>
+      </div>
+    </div>
+  <div *ngIf="drills.length > 0" class="col-sm-12">
+      <!-- <nav aria-label="Page navigation example"> -->
+        <ul class="pagination justify-content-center">
+          <li class="page-item" (click)="changePage(page-1)"><a class="page-link" >Previous</a></li>
+          <li *ngFor="let item of createRange(pageCounter)" class="page-item"><a class="page-link" (click)="changePage(item-1)" >{{item}}</a></li>
+          <li class="page-item" (click)="changePage(page+1)"><a class="page-link" >Next</a></li>
+        </ul>
+      <!-- </nav> -->
+  </div>
+  <div *ngIf="noDrillCheck" class="col-sm-12">
+    <div class="add-drills">
+      <h4 ><span>No drills found.</span></h4>
+    </div>
+  </div>
+  <div class="row" *ngFor="let drill of drills;let counter=index" style="margin: 0px;">
+    <div *ngIf="drill.selected == true" class="col-sm-1 padding">
+      <div class="text-center">
+        <img class="select-icon" [src]="assetsUrl + 'images/select-icon.png'" alt="" /> </div>
+    </div>
+    <div [class.col-sm-11] ="drill.selected == true" [class.col-sm-12]="drill.selected != true">
+      <div class="add-warm-up-box">
+        <div class="row" style="margin: 0px;">
+          <div class="col-sm-5 left-padding">
+            <a>
+              <video class="warm-up-video" *ngIf="drill.video != undefined" controls>
+                <source [src]="drill.video.name">
+              </video>
+            </a>
+          </div>
+          <div class="col-sm-7 left-padding">
+            <div class="add-drills">
+              <h5>{{drill.drillmajors.name}}</h5>
+              <p [innerHTML]="drill.description"></p>
+            </div>
+            <button type="submit" (click)="selectDrill(counter,drill.id)" class="select-btn"> <span *ngIf="drill.selected != true">Select</span> <span *ngIf="drill.selected == true">Selected</span> </button>
+            <button type="submit" (click)="insertDrill(drill)" class="select-btn">Insert Workout</button>
+            <button type="submit" (click)="openPreview(counter)" class="select-btn">Preview</button>
+          </div>
+          <div class="clear"></div>
+        </div>
+      </div>
+    </div>
+    <preview-drill-component *ngIf="drill.enablePreview" [drill]="drill" [close]="closePreview"></preview-drill-component>
+  </div>
+  
+
+</div>

@@ -1,0 +1,53 @@
+<div class="modal_wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="register-popup-bg">
+                    <div class="col-sm-6" style="padding-left: 0px; padding-right: 0px; float: left;">
+                        <div class="login-bg" style="border-top-right-radius: 0px; border-bottom-right-radius: 0px;">
+                            <h2 style="text-align: center; color: #fd3c3d; font-weight: 900; text-transform: uppercase; padding-top: 30px;">Email Verification</h2>
+
+                            <div *ngIf="!verifyResponse && loading">
+                                <div class="col-sm-12">
+                                    <h3 style="font-size: 50px; text-align: center; padding-top: 50px; color: #fd3c3d; text-transform: uppercase;">Your Email is been verifying</h3>
+                                </div>
+                            </div>
+
+                            <div class=" login" *ngIf="verifyResponse && !loading">
+                                <div class="col-sm-12">
+                                    <h3 style="padding-left: 20px; padding-right: 20px; font-size: 26px; padding-top: 30px; text-align: center; line-height: 40px; font-weight: normal; color: #20232a;">Your Account has successfully verified</h3>
+                                    <br />
+                                    <h3 style="padding-left: 20px; padding-right: 20px; font-size: 22px; padding-top: 10px; text-align: center; line-height: 40px; font-weight: normal; color: #20232a;">Your Account has successfully verified</h3>
+                                    <div class="text-center">
+                                        <button (click)="navigate()" class="login-popup-button" style="text-align: center; float: unset;">Okay</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-12 login" *ngIf="!verifyResponse && !loading">
+                                <h3 style="padding-left: 20px; padding-right: 20px; font-size: 26px; padding-top: 30px; text-align: center; line-height: 40px; font-weight: normal; color: #20232a;">Not verified</h3>
+                                <br />
+                            </div>
+
+                            <div *ngIf="loading">
+                                <loader-component [width]="80"></loader-component>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="col-sm-6" style="padding-left: 0px; padding-right: 0px; float: left;">
+                        <div class="login-bg" style="background-color: #fd3c3d; border-bottom-right-radius: 4px !important; border: 0px; border-radius: 0px; border-top-right-radius: 4px;">
+                            <img style="width: 100%;" class="mobile-icon" [src]="assetsUrl + 'images/verify-icon.png'" alt="" />
+
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+
+                    <div class="clear"></div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

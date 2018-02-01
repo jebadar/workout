@@ -1,0 +1,11 @@
+<table class="table tablewrapper">
+    <tr>
+        <td width="70%" class="innerTable">
+            <input class="form-control" type="text" value="{{type.title}}" id="example-url-input" name="minutes" [(ngModel)]="type.title">
+        </td>
+        <td class="innerTable">
+            <span style="cursor:pointer;" (click)="cancel()" class="badge badge-secondary">Cancel</span>
+            <span style="cursor:pointer;" class="badge badge-primary" (click)="submit()">Save</span>
+        </td>
+    </tr>
+</table>

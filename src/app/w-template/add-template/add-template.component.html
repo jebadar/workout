@@ -1,0 +1,78 @@
+<div  class="container">
+  <div class="row">
+    <div class="col-md-3 offset-md-9">
+        <button *ngIf="!loader && formCheck" class="btn btn-primary btn-block" (click)="submitForm()">Save</button>
+        <button *ngIf="!loader && !formCheck" class="btn btn-primary btn-block" disabled>Save</button>
+        <loader-component  *ngIf="loader" [width]="30"></loader-component>
+        <br /><br />
+    </div>
+  </div>
+
+  <div class="row">
+      <div class="col-md-12">
+
+
+    <div class="card" >
+      <div class="card-block">
+        <div class="card-header">
+          <h3>{{textHeading}} Template</h3>
+        </div>
+
+        <div *ngIf="fetchingData"  class="card-body">
+          <loader-component   [width]="100"></loader-component>
+        </div>
+        
+        
+        <div *ngIf="!fetchingData"  class="card-body">
+            <div class="form-group row">
+                <label for="example-text-input" class="col-2 col-form-label">Name</label>
+                <div class="col-10">
+                    <input [(ngModel)]="model.name" class="form-control" type="text" id="name" name="name"
+                    (change)="validate()" placeholder="Template name...">
+                </div>
+              </div>
+          <div class="form-group row" >
+            <label for="example-text-input" class="col-2 col-form-label">Duration</label>
+            <div class="col-10">
+              <select [(ngModel)]="model.duration_id" class="form-control" type="text" id="duration" name="duration"
+                (change)="validate();">
+                <option value=null>Select a duration</option>
+                <option *ngFor="let duration of durations" value="{{duration.id}}">{{duration.minutes}}</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group row" >
+            <label for="example-text-input" class="col-2 col-form-label">Template Type</label>
+            <div class="col-10">
+              <select [(ngModel)]="model.title_id" class="form-control" type="text" id="templateType" name="templateType"
+                (change)="validate()">
+                <option value=null>Select a template</option>
+                <option *ngFor="let templateType of templateTypes" value="{{templateType.id}}">{{templateType.title}}</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="example-text-input" class="col-2 col-form-label">No. of Drills</label>
+            <div class="col-10">
+              <input [(ngModel)]="model.number_of_drills" (change)="changeDrills()" class="form-control" type="number" min="0" id="num_drills" name="num_drills">
+            </div>
+          </div>
+        
+          </div>
+        </div>
+    </div>
+
+
+    </div>
+  </div>
+
+
+  <div class="row" *ngIf="!fetchingData">
+    
+      <div class="col-md-6" *ngFor="let drill of arr(model.number_of_drills).fill(1);let counter=index">
+          <template-categories-component *ngIf="minorObject && minorObject[counter]" [catObj]="minorObject[counter].minor" [counter]="counter" [addCategory]="addCategoryFunction"></template-categories-component>        
+          <template-categories-component *ngIf="!minorObject || !minorObject[counter]" [counter]="counter" [addCategory]="addCategoryFunction"></template-categories-component>
+      </div>
+  
+  </div>
+</div>

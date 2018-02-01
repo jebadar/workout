@@ -1,0 +1,7 @@
+.search-results {
+    height: 100%;
+    /* overflow: scroll; */
+  }
+  .table-responsive {
+    display: table;
+}

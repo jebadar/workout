@@ -1,0 +1,25 @@
+<table class="table tablewrapper">
+  <tr>
+      <td class="innerTable">
+          <div [formGroup]="settingForm">
+              <input class="form-control" type="text" [value]="setting.name" id="example-url-input" name="type" formControlName="type">
+            </div>
+      </td>
+      <td class="innerTable">
+        <div class="input-group" [formGroup]="settingForm">
+          <input class="form-control" type="text" [value]="setting.duration" id="example-url-input" name="duration" formControlName="duration">
+          <span class="input-group-addon">days</span>
+        </div>
+      </td>
+      <td class="innerTable">
+        <div [formGroup]="settingForm" class="input-group">
+          <input class="form-control" type="number" [value]="setting.value" id="example-url-input" name="amount" formControlName="amount">
+          <span class="input-group-addon">$</span>
+        </div>
+      </td>
+      <td class="innerTable">
+        <span style="cursor:pointer;" (click)="cancel()" class="badge badge-secondary">Cancel</span>
+        <span style="cursor:pointer;" class="badge badge-primary" (click)="submit()">Submit</span>
+      </td>
+  </tr>
+</table>

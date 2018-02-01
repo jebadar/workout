@@ -1,0 +1,19 @@
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <div class="modal-title">Add {{data.level}} Category</div>
+    </div>
+    <div >
+      <div class="modal-body">
+      <div [formGroup]="addCategory">
+        <input type="text" class="form-control" formControlName="title" placeholder="Category title...">
+      </div>
+      </div>
+      <div class="modal-footer">
+        <button *ngIf="!loading" type="button" class="btn btn-primary" (click)="confirm()">Add</button>
+        <button *ngIf="!loading" type="button" class="btn btn-default" (click)="close()">Cancel</button>
+        <loader-component *ngIf="loading" width="30"></loader-component>
+      </div>
+    </div>
+  </div>
+</div>

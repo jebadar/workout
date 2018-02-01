@@ -1,0 +1,77 @@
+<div class="profile-workout-bg" data-infinite-scroll [infiniteScrollDistance]="1" [infiniteScrollThrottle]="300" (scrolled)="onScroll()">
+  <div class="col-sm-12">
+      <div class="input-group">
+      <input class="form-control mr-sm-2 workout-search" style="margin-right: 0rem !important;" type="text" name="search" [(ngModel)]="searchStr" placeholder="Search">      
+          <span style="height: 50px; padding-left: 15px; padding-right: 15px;cursor:pointer;" class="input-group-addon" (click)="search()" id="basic-addon2"><i class="fa fa-search" aria-hidden="true"></i></span>
+      </div>
+  </div>
+  <div *ngFor="let work of workout;let counter=index">
+    <div class="col-sm-12">
+      <div class="payment-box">
+        <div class="payment-heading">
+          <h2>{{work.title}}</h2>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-3 float work-padding">
+      <div class="payment-detail-box">
+        <div class="payment-heading">
+          <h2><span><b>Type:</b>{{work.workout_type}}</span></h2>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-3 float work-padding">
+      <div class="payment-detail-box">
+        <div class="payment-heading">
+          <h2><span><b>Drills:</b> {{work.no_of_drills}}</span></h2>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-3 float work-padding">
+      <div class="payment-detail-box">
+        <div class="payment-heading">
+          <h2><span><b>Duration:</b>{{work.duration}}</span></h2>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-1 float work-padding" *ngIf="work.workout_type == 'diy'">
+      <div class="payment-detail-box">
+        <div class="payment-heading" (click)="editWorkout(work.id)"   style="cursor:pointer;">
+          <h2><span><i class="fa fa-pencil" aria-hidden="true"></i></span></h2>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-1 float work-padding" *ngIf="work.workout_type == 'quick'">
+        <div class="payment-detail-box" style="cursor:pointer;">
+          <div class="payment-heading" (click)="refreshWorkout(counter)">
+            <h2><span><i class="fa fa-refresh" aria-hidden="true"></i></span></h2>
+          </div>
+        </div>
+      </div>
+    <div class="col-sm-1 float work-padding">
+      <div class="payment-detail-box" style="cursor:pointer;">
+        <div (click)="viewWorkout(work.id)"  class="payment-heading">
+          <h2><span><i class="fa fa-eye" aria-hidden="true"></i></span></h2>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-1 float ">
+      <div class="payment-detail-box"  style="cursor:pointer;" (click)="delete(work.id,counter)">
+        <div class="payment-heading">
+          <h2><span><i class="fa fa-shopping-basket" aria-hidden="true"></i></span></h2>
+        </div>
+      </div>
+    </div>
+    <div class="clear"></div>
+    <div class="col-sm-12">
+    <div style="border: 1px dashed #d1d3d9; margin-bottom: 25px;"></div>
+  </div>
+    <div class="clear"></div>
+  <loader-red [width]="80" *ngIf="work.loading"></loader-red>                                                                                    
+</div>
+<div class="col-sm-12" *ngIf="!loading && workout.length==0">
+    <span  colspan="6" class="text-center">No workout found.</span>
+  </div>
+  <div class="clear"></div>
+  <loader-red [width]="80" *ngIf="loading"></loader-red>                                                                                  
+</div>

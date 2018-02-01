@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+      <app-new-workout-wrapper></app-new-workout-wrapper>
+      <button style="padding-top: 10px; padding-bottom: 10px; padding-left: 20px; padding-right: 20px; margin: 0px;" (click)="showProfile()" class="workout-button" data-toggle="tooltip" data-placement="right" title="Personal Info" type="submit"><i class="fa fa-user" aria-hidden="true"></i>Profile</button>
+      </div>
+    </div>
+  </div>
+<!-- profile Section Start-->
+
+
+<div class="container">
+    <div class="row">
+      <div *ngIf="enableProfile" class="col-sm-4">
+        <user-info-box-component></user-info-box-component>
+      </div>
+      
+      <div [class.col-sm-12]="enableProfile == false"  [class.col-sm-8]="enableProfile == true">
+            <!-- Nav tabs -->
+            <div class="profilebg-1">
+              <div class="profilebg-1-heading">
+                <h5>Workout</h5>
+              </div>
+            </div>
+            <!-- Tab panes -->
+            <div class="tab-content">
+              <div role="tabpanel" class="tab-pane active" id="home">
+                <user-workout-component [currentUser]="user"></user-workout-component>
+              </div>
+            </div>
+  
+      </div>
+    </div>
+  </div>
+  <!-- Profile Section End-->	

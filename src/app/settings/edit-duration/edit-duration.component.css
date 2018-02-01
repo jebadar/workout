@@ -1,0 +1,16 @@
+.innerTable {
+    border-top: none;
+    width: 25%;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+.innerTable input{
+    text-align: center;
+    padding: 2px;
+    width: 75px;
+}
+
+.tablewrapper{
+    margin: 0px;
+}

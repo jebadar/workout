@@ -1,0 +1,37 @@
+<div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div class="modal-title">
+          <strong>Add Payment Plan</strong>
+        </div>
+      </div>
+      
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-12" [formGroup]="paymentForm">
+              <input class="form-control" type="text"  name="type" formControlName="type" placeholder="Payment plan name...">
+          </div>
+          <div class="col-md-12"><br /></div>
+          <div class="col-md-6" [formGroup]="paymentForm">
+              <select class="form-control" name="duration" formControlName="duration" value="Select Plan Duration">
+                <option value=null>Select Plan Duration</option>
+                <option value="7">Weekly</option>
+                <option value="30">Monthly</option>
+                <option value="360">Yearly</option>
+              </select>
+          </div>
+          
+          <div class="col-md-6 input-group" [formGroup]="paymentForm">
+              <input class="form-control" type="number"  name="amount" formControlName="amount" placeholder="Plan cost..." >
+              <span class="input-group-addon">$</span>
+          </div>
+          
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button *ngIf="!loading" type="button" class="btn btn-primary" (click)="submit()">Add</button>
+        <button *ngIf="!loading" type="button" class="btn btn-default" (click)="close()">Cancel</button>
+        <loader-component *ngIf="loading" width="30"></loader-component>
+      </div>
+    </div>
+  </div>

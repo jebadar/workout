@@ -1,0 +1,24 @@
+<div class="row">
+  <div class="col-sm-12">
+      <div class="card"  style="background-color:#ecf0f5">
+        <div class="card-header">
+          <div class="row">
+              <div class="col-md-6">
+                <strong>{{level}} Categories</strong>    
+              </div>
+              <div class="col-md-6 text-right">
+                  <button type="button" class="btn btn-primary " (click)="addByModal()">Add {{level}} Category</button>
+              </div>
+          </div>
+        </div>
+        <div style="margin-top:2px">
+          <ul *ngIf="catObj.length==0" class="list-group list-group-flush">
+            <li class="list-group-item text-center">No {{level}} category found.</li>
+          </ul>
+          <ul  *ngFor="let cat of catObj;let counter=index" class="list-group list-group-flush">
+            <single-category-component [categoryDeleted]="categoryDeleted" [catObj]="cat" [level]=level></single-category-component>
+          </ul>
+        </div>
+      </div>
+  </div>
+</div>

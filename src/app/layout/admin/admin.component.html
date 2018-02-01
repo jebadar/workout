@@ -1,0 +1,203 @@
+<div class="hold-transition skin-blue sidebar-mini">
+
+  <div class="wrapper" [style.background]="color">
+
+
+
+    <header class="navbar-header main-header">
+
+      <a class="logo">
+        <span class="logo-mini">
+          <b>A</b>LT</span>
+        <span class="logo-lg">
+          <b>Workout</b>Pro</span>
+      </a>
+      <nav class="navbar navbar-static-top">
+          <span class="section-heading">
+                {{title}}
+          </span>
+          
+          <div class="navbar-custom-menu text-white">
+            <strong>Welcome</strong> {{myName}} 
+            (<logout-component></logout-component>)
+            
+          </div>
+      </nav>
+    </header>
+    <nav *ngIf="!detectmob" class="navbar navbar-toggleable-md navbar-light bg-faded">
+      <button (click)="collapseMenu()" class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand" href="#">Menu</a>
+      <div class="collapse navbar-collapse" [collapse]="isCollapsed" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item" routerLink="/admin/">
+                <a class="nav-link">
+                  <i class="fa fa-snowflake-o" aria-hidden="true"></i>
+                  <span>Dashboard</span>
+                </a>
+              </li>
+            <li class="nav-item" (click)="routerLink('workout')">
+              <a class="nav-link">
+                <i class="fa fa-snowflake-o" aria-hidden="true"></i>
+                <span>Workouts</span>
+              </a>
+            </li>
+            <li class="nav-item" routerLink="/admin/drills">
+              <a class="nav-link">
+                  <i class="fa fa-hand-rock-o" aria-hidden="true"></i>
+                <span>Drills</span>
+              </a>
+            </li>
+            <li class="nav-item active" (click)="routerLink('user')">
+              <a class="nav-link">
+                <i class="fa fa-user-o" aria-hidden="true"></i>
+                <span>Users</span>
+              </a>
+            </li>
+            <li class="nav-item" routerLink="/admin/templates">
+              <a class="nav-link">
+                  <i class="fa fa-newspaper-o" aria-hidden="true"></i>
+                <span>Templates</span>
+              </a>
+            </li>
+            <li class="nav-item active" (click)="routerLink('category')">
+              <a class="nav-link">
+                <i class="fa fa-window-restore" aria-hidden="true"></i>
+                <span>Categories</span>
+              </a>
+            </li>
+            <li class="nav-item" (click)="routerLink('settings')">
+              <a class="nav-link">
+                <i class="fa fa-wrench" aria-hidden="true"></i>
+                <span>Settings</span>
+              </a>
+            </li>
+        </ul>
+      </div>
+    </nav>
+    <!-- Left side column. contains the logo and sidebar -->
+    <aside class="main-sidebar">
+      <!-- sidebar: style can be found in sidebar.less -->
+      <section class="sidebar">
+        <!-- Sidebar user panel -->
+        <div class="user-panel">
+
+          <div class="pull-left info">
+
+            <a href="#">
+              <i class="fa fa-circle text-success"></i> Online</a>
+          </div>
+        </div>
+
+        <!-- sidebar menu: : style can be found in sidebar.less -->
+        <ul class="sidebar-menu" data-widget="tree">
+          <li class="header">MAIN NAVIGATION</li>
+          <li class="treeview" [ngClass]="{'active':title=='Dashboard'}">
+            <a routerLink="/admin/">
+              <i class="fa fa-bar-chart" aria-hidden="true"></i>
+              <span>Dashboard</span>
+              <span class="pull-right-container">
+                <i *ngIf="title=='Dashboard'" class="fa fa-angle-left pull-right"></i>
+              </span>
+            </a>
+          </li>
+
+          <li class="treeview" [class.active]="title=='Manage Workouts'">
+            <a routerLink="/admin/workout">
+              <i class="fa fa-snowflake-o" aria-hidden="true"></i>
+              <span>Workouts</span>
+              <span class="pull-right-container">
+                <i *ngIf="title=='Manage Workouts'" class="fa fa-angle-left pull-right"></i>
+              </span>
+            </a>
+          </li>
+
+          <li class="treeview" [class.active]="title=='Manage Drills'">
+            <a routerLink="/admin/drills">
+              <i class="fa fa-hand-rock-o" aria-hidden="true"></i>
+              <span>Drills</span>
+              <span class="pull-right-container">
+                <i *ngIf="title=='Manage Drills'" class="fa fa-angle-left pull-right"></i>
+              </span>
+            </a>
+          </li>
+
+          <li class="treeview" [class.active]="title=='Manage Users'">
+              <a routerLink="/admin/user">
+                <i class="fa fa-user-o" aria-hidden="true"></i>
+                <span>Users</span>
+                <span class="pull-right-container">
+                  <i *ngIf="title=='Manage Users'" class="fa fa-angle-left pull-right"></i>
+                </span>
+              </a>
+            </li>
+
+          <li class="treeview" [class.active]="title=='Manage Templates'">
+            <a (click)="routerLink('templates')">
+              <i class="fa fa-newspaper-o" aria-hidden="true"></i>
+              <span>Templates</span>
+              <span class="pull-right-container">
+                <i *ngIf="title=='Manage Templates'" class="fa fa-angle-left pull-right"></i>
+              </span>
+            </a>
+          </li>
+          
+          <li class="treeview" [class.active]="title=='Manage Categories'">
+            <a routerLink="/admin/category">
+              <i class="fa fa-window-restore" aria-hidden="true"></i>
+              <span>Categories</span>
+              <span class="pull-right-container">
+                <i *ngIf="title=='Manage Categories'" class="fa fa-angle-left pull-right"></i>
+              </span>
+            </a>
+          </li>
+
+          <li class="treeview" [class.active]="title=='Application Settings'">
+            <a routerLink="/admin/settings">
+              <i class="fa fa-wrench" aria-hidden="true"></i>
+              <span>Settings</span>
+              <span class="pull-right-container">
+                <i *ngIf="title=='Application Settings'" class="fa fa-angle-left pull-right"></i>
+              </span>
+            </a>
+          </li>
+    </ul>
+    </section>
+    <!-- /.sidebar -->
+  </aside>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper"style="min-height: 92vh;">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <!-- <h1>
+        Dashboard
+        <small>Control panel</small>
+      </h1> -->
+
+      </section>
+
+      <!-- Main content -->
+      <div class="content">
+
+
+        <!-- Left col -->
+        <!-- right col -->
+        <!-- <category-wrapper-component></category-wrapper-component> -->
+        <router-outlet></router-outlet>
+        <!-- /.row (main row) -->
+
+      </div>
+      <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+
+
+
+    <!-- /.control-sidebar -->
+    <!-- Add the sidebar's background. This div must be placed
+       immediately after the control sidebar -->
+  </div>
+</div>

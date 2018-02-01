@@ -1,0 +1,65 @@
+<div class="row">
+  <div class="col-md-12">
+
+
+      <div class="card" >
+        <div class="card-block">
+          <div class="card-header">
+            <div class="card-title">{{text}}</div>
+          </div>
+          <div class="card-body" style="min-height: 350px;">
+            <div class="row">
+              <div class="col-md-4">
+                  <strong>Title:</strong> {{workout.title}}
+              </div>
+              <div class="col-md-2">
+                  <strong>Type:</strong> {{workout.workout_type}}
+              </div>
+              <div class="col-md-2">
+                  <strong>Duration:</strong> {{workout.duration}}
+              </div>
+              <div class="col-md-4">
+                  <strong>Created by:</strong> {{email}}
+              </div>
+              <div class="col-md-12"><br /></div>
+            </div>
+            
+            <nav class="navbar navbar-light bg-faded">
+              <label class="navbar-brand">Manage Drills</label>
+              <button type="button" style="float:right" (click)="addDrill()" class="btn btn-primary">Add Drill</button>
+            </nav>
+            <div class="table-responsive">
+              <table class="table table-hovered ">
+                <thead>
+                  <tr>
+                    <th style="width: 10px">#</th>
+                    <th>Name</th>
+                    <th>Major Category</th>
+                    <th>Sub Category</th>
+                    <th style="width: 40px">Remove</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let drill of workout.workoutdetails;let counter=index;">
+                    <td>{{counter + 1}}</td>
+                    <td *ngIf="drill.drill != null">{{drill.drill.name}}</td>
+                    <td *ngIf="drill.drill != null">{{drill.drill.drillsubs.minors.drill_majors.name}}</td>
+                    <td *ngIf="drill.drill != null">{{drill.drill.drillsubs.name}}</td>
+                    <td>
+                      <span style="cursor:pointer;" (click)="removeDrill(drill.drill_id)" class="badge badge-primary">Rmove</span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div *ngIf="loading">
+            <loader-component [width]="80"></loader-component>
+          </div>
+        </div>
+      </div>
+
+
+
+  </div>
+</div>

@@ -1,0 +1,34 @@
+<div>
+    <li class="list-group-item" (dblclick)="onDblClicked()" style="text-align: center;cursor:pointer">
+        <div class="row" *ngIf="!dbleClckCheck" id="text">
+            <div class="col-sm-7" style="display:inline-block;word-wrap: break-word;" >{{catObj.name}}</div>
+            <div class="col-sm-5">
+                <i *ngIf="!loading" style="cursor:pointer;float: right;color: chocolate;" (click)="delete()" class="fa fa-times"></i>
+                <i *ngIf="nextLevel!=null && !loading" style="cursor:pointer;float: right;padding-right: 45px;" (click)="showClildren()"
+                    class="fa fa-caret-square-o-down" aria-hidden="true"></i>
+                <div style="float:right" *ngIf="loading">
+                    <loader-component [width]="20"></loader-component>
+                </div>
+            </div>
+        </div>
+
+        <form *ngIf="dbleClckCheck" (keydown)="keyDownFunction($event)">
+            <div class="form-group" style="position:relative">
+                <div class="input-group">
+                    <span class="input-group-btn">
+                                <button (click)="cancel()"class="btn btn-secondary" type="button"><i class="fa fa-times"></i></button>
+                            </span>
+                        <input style="padding-left: 20px" type="text" name="text" class="form-control" [(ngModel)]="catObj.name" placeholder="Category Name...">
+                    <!-- <i class="fa fa-times" style="position: absolute;top: 10px;left: 5px;" (click)="cancel()" ></i> -->
+                </div>
+            </div>
+        </form>
+    </li>
+
+    <div [style.margin-top.px]="10" [style.margin-bottom.px]="10" *ngIf="catObj.showChildren" class="row">
+        <div class="col-10 offset-1">
+                <fetch-category-component [level]="nextLevel" [catObj]="children" [parentId]="catObj.id"></fetch-category-component>
+        </div>
+        
+    </div>
+</div>

@@ -1,0 +1,85 @@
+<div class="modal_wrapper" *ngIf="!closePage">
+<div class="container">
+    <div class="row">
+
+        <div class="col-sm-12">
+            <div class="register-popup-bg">
+              <div class="col-sm-6" style="padding-left: 0px; padding-right: 0px; float: left;">
+                <div class="login-bg" style="border-top-right-radius: 0px; border-bottom-right-radius: 0px; padding-bottom: 110px;">
+                <h2 style="text-align: center; color: #fd3c3d; font-weight: 900; text-transform: uppercase; padding-top: 30px;">Login</h2>
+                <form class="padding">
+                    <div class="form-group" [formGroup]="registerForm">
+                      <label for="exampleInputEmail1"><div class="login"><h3>Email address</h3></div></label>
+                      <input type="email" class="form-control" id="exampleInputEmail1" name="email" formControlName="email"  placeholder="Email">
+                    </div>
+                    <div class="form-group" [formGroup]="registerForm">
+                      <label for="exampleInputPassword1"><div class="login"><h3>Password</h3></div></label>
+                      <input type="password" class="form-control" id="exampleInputPassword1" name="password" formControlName="password" placeholder="Password">
+                    </div>
+                    <button *ngIf="!loginDisable" type="submit" (click)="login()" class="login-popup-button">Login</button>
+                    <loader-component *ngIf="loading && loginDisable" [width]="82"></loader-component>                    
+                  </form>
+                    <div class="clear"></div>
+                  </div>
+                  <div class="clear"></div>
+              </div>
+              <div class="col-sm-6" style="padding-left: 0px; padding-right: 0px; float: left;">
+                <div class="login-bg" style="background-color: #fd3c3d; border-bottom-right-radius: 4px !important; border: 0px; border-radius: 0px; border-top-right-radius: 4px;">
+                  <div class="col-sm-12">
+                      <button type="button" class="close" (click)="navigate()">&times;</button>
+                  </div>
+                    <h2 style="text-align: center; text-transform: uppercase; color:#fff; padding-bottom: 10px; padding-top: 30px;">Register</h2>
+                    <form *ngIf="!successRegister" class="padding">
+                        <div class="col-sm-6 modal-float">
+                          <div class="form-group" [formGroup]="registerForm">
+                            <label for="exampleInputEmail1"><div class="login"><h3 style="color: #fff;">Name</h3></div></label>
+                            <input type="text" class="form-control" style="border-right: 3px solid #20232a;" id="exampleInputEmail11" name="name" formControlName="name" placeholder="Name">
+                          </div>
+                        </div>
+                        <div class="col-sm-6 modal-float">
+                          <div class="form-group" [formGroup]="registerForm">
+                            <label for="exampleInputEmail1"><div class="login"><h3 style="color: #fff;">Email address</h3></div></label>
+                            <input type="email" class="form-control" style="border-right: 3px solid #20232a;" id="exampleInputEmail118" name="email" formControlName="email" placeholder="Email address">
+                          </div>
+                        </div>
+                        <div class="col-sm-6 modal-float">
+                          <div class="form-group" [formGroup]="registerForm">
+                            <label for="exampleInputPassword1"><div class="login"><h3 style="color: #fff;">Password</h3></div></label>
+                            <input type="password" class="form-control" style="border-right: 3px solid #20232a;" id="exampleInputPassword12" name="password" formControlName="password" placeholder="Password">
+                          </div>
+                        </div>
+                        <div class="col-sm-6 modal-float">
+                          <div class="form-group" [formGroup]="registerForm">
+                            <label for="exampleInputPassword1"><div class="login"><h3 style="color: #fff;">Confirm Password</h3></div></label>
+                            <input type="password" class="form-control" style="border-right: 3px solid #20232a;" id="exampleInputPassword123" name="confirmPassword" formControlName="confirmPassword"
+                              placeholder="Confirm Password">
+                          </div>
+                        </div>
+                        <div class="col-sm-12 modal-float">
+                          <div class="form-group" [formGroup]="registerForm">
+                            <label for="exampleInputEmail1"><div class="login"><h3 style="color: #fff;">Phone Number</h3></div></label>
+                            <input type="number" class="form-control" style="border-right: 3px solid #20232a;"  id="exampleInputEmail116" name="landline" formControlName="landline" placeholder="Phone Number">
+                          </div>
+                        </div>
+                        <div class="clear"></div>
+                        <div class="col-sm-12">
+                          <button *ngIf="!registerDisable" type="submit" (click)="submit()" class="login-popup-button" style="margin-bottom: 14px; background-color: #20232a;">Register</button>
+                          <loader-component *ngIf="loading && registerDisable" [width]="82"></loader-component>
+                        </div>
+                        <div class="clear"></div>
+                      </form>
+                      <h2 *ngIf="successRegister" style="text-align: center; text-transform: uppercase; color:#fff; padding-bottom: 85px; padding-top: 89px;     font-size: 27px;
+                      font-weight: 900;
+                      line-height: 60px;
+                      letter-spacing: 8px;padding-right: 20px;padding-left: 20px;">Successfully Registered <br>Please follow link sent to your email.</h2>
+                      <h2 *ngIf="unsuccessRegister" style="text-align: center; text-transform: uppercase; color:#fff; padding-bottom: 85px; padding-top: 89px;     font-size: 27px;
+                      font-weight: 900;
+                      line-height: 60px;
+                      letter-spacing: 8px;padding-right: 20px;padding-left: 20px;">Error occured in registering account <br>Please try again!.</h2>
+                  </div>
+              </div>
+            </div>
+          </div>
+    </div>
+  </div>
+</div>

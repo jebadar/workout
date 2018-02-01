@@ -1,0 +1,60 @@
+<div class="card">
+    <div class="card-block">
+                <div class="card-header">
+                  <div class="card-title">
+                    <strong>Template Durations</strong>
+                    <span style="cursor:pointer" (click)="add()" class="badge badge-primary"><i class="fa fa-pencil" aria-hidden="true"></i>Add</span>
+                  </div>
+                </div>
+
+
+
+                <div class="card-body">
+                  <div class="table-responsive">
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <th width="25%" class="text-center">Minutes</th>
+                          <th width="25%" class="text-center">Free Time <br /><small>(From)</small></th>
+                          <th width="25%" class="text-center">Free Time <br /><small>(To)</small></th>
+                          <th width="25%"></th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngIf="loading && durations.length==0">
+                          <td colspan="5">
+                              <loader-component></loader-component>
+                          </td>
+                        </tr>
+                        <tr *ngIf="!loading && durations.length==0">
+                            <td colspan="5" class="text-center">
+                                No template durations found.
+                            </td>
+                        </tr>
+
+
+                        <tr *ngFor="let duration of durations;let counter = index">
+                          <td class="text-center" *ngIf="duration.editFlag !='true'">{{duration.minutes}}</td>
+                          <td class="text-center" *ngIf="duration.editFlag !='true'">{{duration.free_time_from}}</td>
+                          <td class="text-center" *ngIf="duration.editFlag !='true'">{{duration.free_time_to}}</td>
+
+                          <td *ngIf="duration.editFlag =='false'" class="text-right">
+                            <span style="cursor:pointer;" (click)="edit(counter,'true')" class="badge badge-primary"><i class="fa fa-pencil" aria-hidden="true"></i>Edit</span>
+                            <span style="cursor:pointer;" (click)="delete(duration.id,counter)" class="badge badge-danger"><i class="fa fa-pencil" aria-hidden="true"></i>Delete</span>
+                          </td>
+                          
+
+                          <td *ngIf="duration.editFlag  == 'pending'">
+                              <loader-component width="20"></loader-component>
+                          </td>
+                          <td colspan="4" *ngIf="duration.editFlag =='true'">
+                            <edit-duration-component [duration]="duration" [counter]="counter" [edit]="edit"></edit-duration-component>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+
+  </div>
+</div>

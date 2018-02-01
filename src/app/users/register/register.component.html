@@ -1,0 +1,90 @@
+<div class="modal_wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="register-popup-bg">
+          <div class="col-sm-6" style="padding-left: 0px; padding-right: 0px; float: left;">
+            <div class="login-bg" style="border-top-right-radius: 0px; border-bottom-right-radius: 0px;">
+              <h2 style="text-align: center; color: #fd3c3d; font-weight: 900; text-transform: uppercase; padding-top: 30px;">{{heading}}</h2>
+              <form *ngIf="!loading && !successRegister && purpose == 'register'" class="padding">
+                <div class="col-sm-6 modal-float">
+                  <div class="form-group" [formGroup]="registerForm">
+                    <label for="exampleInputEmail1"><div class="login"><h3>Name</h3></div></label>
+                    <input type="text" class="form-control" id="exampleInputEmail11" name="name" formControlName="name" placeholder="Name">
+                  </div>
+                </div>
+                <div class="col-sm-6 modal-float">
+                  <div class="form-group" [formGroup]="registerForm">
+                    <label for="exampleInputEmail1"><div class="login"><h3>Email address</h3></div></label>
+                    <input type="email" class="form-control" id="exampleInputEmail118" name="email" formControlName="email" placeholder="Email address">
+                  </div>
+                </div>
+                <div class="col-sm-6 modal-float">
+                  <div class="form-group" [formGroup]="registerForm">
+                    <label for="exampleInputPassword1"><div class="login"><h3>Password</h3></div></label>
+                    <input type="password" class="form-control" id="exampleInputPassword12" name="password" formControlName="password" placeholder="Password">
+                  </div>
+                </div>
+                <div class="col-sm-6 modal-float">
+                  <div class="form-group" [formGroup]="registerForm">
+                    <label for="exampleInputPassword1"><div class="login"><h3>Confirm Password</h3></div></label>
+                    <input type="password" class="form-control" id="exampleInputPassword123" name="confirmPassword" formControlName="confirmPassword"
+                      placeholder="Confirm Password">
+                  </div>
+                </div>
+                <div class="col-sm-12 modal-float">
+                  <div class="form-group" [formGroup]="registerForm">
+                    <label for="exampleInputEmail1"><div class="login"><h3>Phone Number</h3></div></label>
+                    <input type="number" class="form-control" id="exampleInputEmail116" name="landline" formControlName="landline" placeholder="Phone Number">
+                  </div>
+                </div>
+                <div class="clear"></div>
+                <div class="col-sm-12">
+                  <button type="submit" (click)="submit()" class="login-popup-button" style="margin-bottom: 14px;">Register</button>
+                </div>
+                <div class="clear"></div>
+              </form>
+              <!-- Verify Reset area start -->
+
+
+
+              <!-- End -->
+
+              <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+          </div>
+
+
+
+
+          <div class="col-sm-6" style="padding-left: 0px; padding-right: 0px; float: left;">
+            <div class="login-bg" style="background-color: #fd3c3d; border-bottom-right-radius: 4px !important; border: 0px; border-radius: 0px; border-top-right-radius: 4px;">
+              <div *ngIf="purpose == 'register'" class="col-sm-12">
+                <button type="button" class="close" (click)="closeBox()">&times;</button>
+              </div>
+              <img *ngIf="purpose == 'register'" class="mobile-icon" [src]="assetsUrl + 'images/register-user-icon-1.png'" alt="" />
+              <img *ngIf="purpose == 'verify'" class="mobile-icon" [src]="assetsUrl + 'images/verify-icon.png'" alt="" />
+              <img *ngIf="purpose == 'reset'" class="mobile-icon" [src]="assetsUrl + 'images/reset-icon.png'" alt="" />
+
+            </div>
+          </div>
+
+
+
+
+
+
+
+
+
+
+          <div class="clear"></div>
+
+          <div class="clear"></div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

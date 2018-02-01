@@ -1,0 +1,166 @@
+<div class="container">
+  <form role="form" (ngSubmit)="submitForm()">
+    <div class="content-wrapper" style="margin-left: 0px;">
+      <div class="row">
+        <div class="col-md-4">
+              <h2 *ngIf="!edit">Add Drill</h2>
+              <h2 *ngIf="edit">Edit Drill</h2>
+        </div>
+        <div class="col-md-3 offset-md-5">
+            <loader-component *ngIf="loader" [width]="40"></loader-component>
+            <button *ngIf="!loader && formCheck" type="submit" class="btn btn-primary btn-block">Save Drill</button>
+            <button *ngIf="!loader && !formCheck" disabled class="btn btn-primary btn-block" >Save Drill</button>
+        </div>
+      </div>
+      <section class="content">
+        <div class="row">
+          <div class="col-sm-8">
+            <div class="box box-primary">
+              <div class="box-header with-border">
+                <h3 class="box-title">Add Details</h3>
+              </div>
+              <div class="box-body">
+
+                <div *ngIf="edit">
+                  <div *ngIf="editDataFetched">
+                    <div class="form-group" [formGroup]="drillForm">
+                      <label for="title">Title</label>
+                      <input type="text" class="form-control" id="title" name="title" placeholder="Enter Drill Title..." formControlName="title"
+                        [(ngModel)]="title" (change)="formStatus()">
+                    </div>
+                    <div class="form-group" [formGroup]="drillForm">
+                      <label for="description">Description</label>
+                      <textarea [froalaEditor]="options" [(froalaModel)]="editorContent" id="description" name="description">
+                                                        </textarea>
+
+                    </div>
+                    <div class="form-group" [formGroup]="drillForm">
+                      <label for="duration">Duration</label>
+                      <input type="number" class="form-control" id="duration" name="duration" placeholder="Enter Drill Duration"
+                        [(ngModel)]="duration" (change)="formStatus()" formControlName="duration">
+                    </div>
+                  </div>
+                  <div *ngIf="!editDataFetched">
+                    <loader-component [width]="80"></loader-component>
+                  </div>
+                </div>
+                <div *ngIf="!edit">
+                  <div class="form-group" [formGroup]="drillForm">
+                    <label for="title">Title</label>
+                    <input type="text" class="form-control" id="title" name="title" placeholder="Enter Title" formControlName="title"
+                      [(ngModel)]="title" (change)="formStatus()">
+                  </div>
+                  <div class="form-group" [formGroup]="drillForm">
+                    <label for="description">Description</label>
+                    <textarea [froalaEditor]="options" [(froalaModel)]="editorContent" id="description" name="description" rows="10"></textarea>
+
+                  </div>
+                  <div class="form-group" [formGroup]="drillForm">
+                    <label for="duration">Duration (minutes)</label>
+                    <input type="number" min="0" class="form-control" id="duration" name="duration" placeholder="Enter Duration"
+                      [(ngModel)]="duration" (change)="formStatus()" formControlName="duration">
+                  </div>
+                </div>
+
+
+              </div>
+
+              <div class="box-footer">
+
+              </div>
+
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="box box-primary">
+                  <div class="box-header with-border">
+                    <h3 class="box-title">Select Category</h3>
+                  </div>
+                  <div class="box-body">
+                    <div *ngIf="edit">
+                      <div *ngIf="editDataFetched">
+                        <drill-categories-component [selectCategoryFunction]="selectCategoryFunction" [editData]="categoriesData" [edit]="edit"></drill-categories-component>
+                      </div>
+                      <div *ngIf="!editDataFetched">
+                        <loader-component [width]="80"></loader-component>
+                      </div>
+                    </div>
+                    <div *ngIf="!edit">
+                      <drill-categories-component [selectCategoryFunction]="selectCategoryFunction" [editData]="categoriesData" [edit]="edit"></drill-categories-component>
+                    </div>
+                  </div>
+                  <div class="box-footer">
+
+                  </div>
+
+                </div>
+              </div>
+
+              <div class="col-sm-12">
+                <div class="box box-primary">
+                  <div class="box-header with-border">
+                    <h3 class="box-title">Add Video</h3>
+                  </div>
+                  <div class="box-body">
+                    <div class="form-group">
+                      <div *ngIf="edit">
+                        <div *ngIf="editDataFetched">
+                          <uploader-component [type]="video" [mediaId]="videoFunction" [edit]="edit" [mediaURL]="mediaData"></uploader-component>
+                        </div>
+                        <div *ngIf="!editDataFetched">
+                          <loader-component [width]="80"></loader-component>
+                        </div>
+                      </div>
+                      <div *ngIf="!edit">
+                        <uploader-component [type]="video" [mediaId]="videoFunction" [edit]="edit" [mediaURL]="mediaData"></uploader-component>
+                      </div>
+
+
+                    </div>
+                  </div>
+                  <div class="box-footer">
+
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-12">
+                <div class="box box-primary">
+                  <div class="box-header with-border">
+                    <h3 class="box-title">Add Image</h3>
+                  </div>
+                  <div class="box-body">
+                    <div class="form-group">
+                      <div *ngIf="edit">
+                        <div *ngIf="editDataFetched">
+                          <uploader-component [type]="image" [mediaId]="imageFunction" [edit]="edit" [mediaURL]="mediaData"></uploader-component>
+                        </div>
+                        <div *ngIf="!editDataFetched">
+                          <loader-component [width]="80"></loader-component>
+                        </div>
+                      </div>
+                      <div *ngIf="!edit">
+                        <uploader-component [type]="image" [mediaId]="imageFunction" [edit]="edit" [mediaURL]="mediaData"></uploader-component>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="box-footer">
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+    </div>
+  </form>
+</div>
+
+
+
+<div *ngIf="loader" class="loaderHolder">
+
+</div>

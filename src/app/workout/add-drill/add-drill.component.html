@@ -1,0 +1,24 @@
+  <div  class="modal-dialog modal-lg">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h3 class="modal-title">Add Drills</h3>
+    </div>
+    <!-- <div *ngIf="!loading"> -->
+
+        <list-drills-component [selectDrills]="selectDrills"></list-drills-component>
+      
+      <!-- <div *ngFor="drill of drills;let counter = index">
+      </div> -->
+    <div class="modal-footer">
+      <button type="button" class="btn btn-primary" (click)="submit()"><span *ngIf="count < 1">Select</span><span *ngIf="count > 0">Selected {{count}} Drill</span></button>
+      <button type="button" class="btn btn-default" (click)="close()">Cancel</button>
+    </div>
+  </div>
+    <!-- </div>
+    <div *ngIf="loading">
+      <div style="position:relative">
+        <loader-component></loader-component>
+      </div>
+
+    </div> -->
+  </div>

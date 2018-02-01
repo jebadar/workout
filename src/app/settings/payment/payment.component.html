@@ -1,0 +1,65 @@
+<div class="card">
+    <div class="card-block">
+
+
+
+              <div class="card-header">
+                <div class="card-title">
+                  <strong>Payment Plans</strong> 
+
+                  <span style="cursor:pointer" (click)="add()" class="badge badge-primary"><i class="fa fa-pencil" aria-hidden="true"></i>Add</span>
+                </div>
+              </div>
+              <div class="card-body">
+                <div *ngIf="!loaded" class="text-center">
+                  Please wait...
+                </div>
+
+                <div class="table-responsive" *ngIf="loaded">
+                  <table *ngIf="!editPayment" class="table">
+                    <thead>
+                      <tr>
+                        <th width="25%" class="text-center">Type</th>
+                        <th width="25%" class="text-center">Duration</th>
+                        <th width="25%" class="text-center">Amount</th>
+                        <th width="25%"></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngIf="setting.length==0">
+                          <td colspan="4" class="text-center">
+                              No payment plans found.
+                          </td>
+                      </tr>
+
+
+                      <tr *ngFor="let set of setting; let counter=index">
+                        <td *ngIf="set.editFlag  != 'true'" class="text-center">
+                          {{set.name}}
+                        </td>
+                        <td *ngIf="set.editFlag  != 'true'" class="text-center">
+                          {{set.duration}}
+                        </td>
+                        <td *ngIf="set.editFlag  != 'true'" class="text-center">
+                          {{set.value}}$
+                        </td>
+                        <td *ngIf="set.editFlag  == 'false'" class="text-right">
+                          <span style="cursor:pointer;" (click)="edit(counter,'true')" class="badge badge-primary"><i class="fa fa-pencil" aria-hidden="true"></i>Edit</span>
+                          <span style="cursor:pointer;" (click)="delete(set.id,counter)" class="badge badge-danger"><i class="fa fa-pencil" aria-hidden="true"></i>Delete</span>
+                        </td>
+                        <td *ngIf="set.editFlag  == 'pending'">
+                            <loader-component width="35"></loader-component>
+                         </td>
+                        <td colspan="4" *ngIf="set.editFlag  == 'true'">
+                          <edit-payment-component [setting]="set" [counter]="counter" [edit]="edit"></edit-payment-component>
+                        </td>
+                      </tr>
+                    
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+
+  </div>
+</div>

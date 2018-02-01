@@ -1,0 +1,24 @@
+.loader-hidden {
+    visibility: hidden;
+}
+.loader-overlay {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 500000;
+    background: rgba(128,128,128,0.4);
+    border-radius: 10px;
+}
+
+.lds-blocks{
+    display: block;
+    margin: auto;
+}
+
+.loaderWrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    height:100%
+}

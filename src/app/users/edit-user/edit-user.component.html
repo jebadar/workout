@@ -1,0 +1,86 @@
+<div class="row">
+  <div class="offset-md-6 col-md-1">
+      
+  </div>
+  <div class="col-md-2" *ngIf="user.id!=myId">
+      <button *ngIf="user.membership_status != 'admin' && user.membership_status != 'block' && editCheck" (click)="makeAdmin(user.id)" class="btn btn-block btn-primary">Make Admin</button>  
+      <button *ngIf="user.membership_status == 'admin' && user.membership_status != 'block' && editCheck" (click)="removeAdmin(user.id)" class="btn btn-block btn-danger">Remove Admin</button>  
+  </div>
+  <div class="col-md-2" *ngIf="user.id!=myId">
+      <button *ngIf="editCheck && user.status != 0" class="btn btn-block btn-primary" (click)="blockUser(user.id)">Block User</button>  
+      <button *ngIf="editCheck && user.status == 0" class="btn btn-block btn-danger" (click)="unblockUser(user.id)">Unblock User</button>  
+  </div>
+  <div class="col-md-12">&nbsp;</div>
+</div>
+  
+<div class="row">
+    <div class="col-md-12">
+        <div class="card" >
+            <div class="card-block">
+              <div class="card-header">
+                <div class="card-title">
+                  {{text}}
+                  &nbsp;
+                  <span *ngIf="user.membership_status == 'admin'" class="badge badge-primary">{{user.membership_status}}</span>
+                  <span *ngIf="user.membership_status == 'verified'" class="badge badge-success">{{user.membership_status}}</span>
+                  <span *ngIf="user.membership_status == 'unverified'" class="badge badge-danger">{{user.membership_status}}</span>
+                
+                
+                </div>
+              </div>
+              <div class="card-body" *ngIf="!loading">
+                <form class="padding" (ngSubmit)="f.form.valid && submit()" #f="ngForm" novalidate>
+                  <div class="form-group row" [formGroup]="userForm">
+                    <label for="example-text-input" class="col-md-2 col-form-label">Name</label>
+                    <div class="col-md-10">
+                      <input class="form-control" type="text" id="example-text-input" name="name" formControlName="name">
+                    </div>
+                  </div>
+                  <div class="form-group row" [formGroup]="userForm">
+                    <label for="example-search-input" class="col-md-2 col-form-label">Email</label>
+                    <div class="col-md-10">
+                      <input class="form-control"  type="text" [readonly]="editCheck" id="example-search-input" name="email"  formControlName="email">
+                    </div>
+                  </div>
+        
+                  <div class="form-group row" [formGroup]="userForm">
+                    <label for="example-url-input" class="col-md-2 col-form-label">Cell Number</label>
+                    <div class="col-md-10">
+                      <input class="form-control" type="number"  id="example-url-input" name="cell_no" formControlName="cell_no">
+                    </div>
+                  </div>
+                  <div class="form-group row" [formGroup]="userForm">
+                    <label for="example-tel-input" class="col-md-2 col-form-label">Landline</label>
+                    <div class="col-md-10">
+                      <input class="form-control" type="number"  id="example-tel-input" name="landline" formControlName="landline">
+                    </div>
+                  </div>
+                  <div class="form-group row" [formGroup]="userForm">
+                    <label for="example-password-input" class="col-md-2 col-form-label">Password</label>
+                    <div class="col-md-10">
+                      <input class="form-control" type="password" id="example-password-input" name="password" formControlName="password">
+                    </div>
+                  </div>
+                  <div  class="form-group row" [formGroup]="userForm">
+                    <label for="example-password-input" class="col-md-2 col-form-label">Confirm Password</label>
+                    <div class="col-md-10">
+                      <input class="form-control" type="password" id="example-password-input" name="password" formControlName="confirmPassword">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <div class="offset-sm-2 col-sm-10">
+                      <button type="button" (click)="back()" class="btn btn-secondary">Back</button>                
+                      <button type="submit" class="btn btn-primary">Save</button>              
+                    </div>
+                  </div>
+                </form>
+                
+              </div>
+              <div *ngIf="loading">
+                  <loader-component [width]="80"></loader-component>
+                </div>
+            </div>
+          </div>
+    </div>
+</div>  
+

@@ -1,0 +1,420 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700,900');
+/*
+
+Workout Builder Pro
+
+*/
+/*-------- Workout popup css Style Start -------- */
+.selected{
+	
+	background-color: #fd3c3d !important;
+	border: 1px solid #ff1112 !important;
+	color: #fff !important;
+}
+.heading
+{
+	font-size: 16px;
+    color: #fff !important;
+    text-transform: uppercase;
+    padding: 0px;
+    margin: 0px;
+    letter-spacing: 2px;
+}
+/*-------- Body Style End -------- */
+
+/*-------- Workout popup css Style Start -------- */
+.clear
+{
+	clear: both;
+}
+.workout-popup-bg
+{
+	width: 100%; background-color: white; border-radius: 4px; padding-top: 15px; padding-bottom: 15px; box-shadow: 0px 0px 5px #000; margin-top: 20px;
+}
+.workout-heading h2
+{
+	font-size: 30px; color: #fd3c3d; font-weight: 900; text-transform: uppercase; letter-spacing: 2px; padding: 0px; margin: 0px; text-align: center; padding-top: 20px; 
+}
+.workout-heading h2 span
+{
+	font-size: 30px; color: #20232a; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; padding: 0px; margin: 0px;
+}
+.nav-tabs
+{
+	border: 0px;
+}
+.nav-tabs > li
+{
+	margin-right: 15px; margin-top: 30px;
+}
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus
+{
+	background-color: #fd3c3d; border: 1px solid #fe1415; border-radius: 4px; color: #fff; font-weight: 900; text-transform: uppercase; letter-spacing: 2px;
+}
+.nav-tabs > li > a
+{
+	background-color: #f2f3f7; color: #20232a; border-radius: 4px; font-weight: 900; text-transform: uppercase; letter-spacing: 2px; border: 1px solid #dee0e5; padding-left: 35px; padding-right: 35px; padding-top: 15px; padding-bottom: 15px;
+}
+.class-time-bg
+{
+	width: 100%; background-color: #f2f3f7; border: 1px solid #dee0e5; border-radius: 4px; margin-top: 30px;
+}
+.class-heading-bg
+{
+	width: 100%; background-color: #fd3c3d; padding-top: 20px; padding-bottom: 20px; padding-left: 10px; padding-right: 10px; text-align: center; border-top-left-radius: 4px; border-top-right-radius: 4px;
+}
+.class-heading h3
+{
+	font-size: 16px; color: white; text-transform: uppercase; letter-spacing: 2px; padding: 0px; margin: 0px; font-weight: bold;
+}
+.check-box
+{
+	width: 100%; background-color: white; border: 1px solid #dee0e5; border-radius: 4px; padding-left: 10px; padding-right: 10px; padding-top: 10px; padding-bottom: 10px; margin-top: 15px; cursor: pointer;
+}
+.check-heading h4
+{
+	font-size: 16px; color: #20232a; text-transform: none; letter-spacing: 2px; padding: 0px; margin: 0px; padding-top: 5px; padding-left: 30px;
+}
+.check-box-heading h4
+{
+	font-size: 16px; color: #20232a; text-transform: none; letter-spacing: 2px; padding: 0px; margin: 0px; padding-top: 5px; padding-left: 25px;
+}
+.check-heading h5
+{
+	font-size: 24px; color: #20232a; text-transform: uppercase; letter-spacing: 2px; padding: 0px; margin: 0px; padding-top: 27px; font-weight: bold; padding-left: 13px; width: 100%; float: left;
+}
+.chech-holder
+{
+	margin-left: 0px; margin-top: 9px;
+}
+.check-heading h5 span
+{
+	font-size: 24px; color: #fd3c3d; text-transform: uppercase; letter-spacing: 2px; padding: 0px; margin: 0px; padding-top: 27px; font-weight: 900;
+}
+.radio input[type="radio"], .radio-inline input[type="radio"], .checkbox input[type="checkbox"], .checkbox-inline input[type="checkbox"]
+{
+	margin-left: -10px;
+}
+.col-padding
+{
+	padding-left: 0px; padding-right: 0px;
+}
+.templete-box
+{
+	width: 100%; background-color: #f2f3f7; border: 1px solid #dee0e5; margin-top: 20px; padding-left: 10px; padding-right: 10px ;padding-top: 20px ;padding-bottom: 20px; text-align: center; border-radius: 4px; cursor: pointer;
+}
+.warm-box
+{
+	width: 100%; background-color: #f2f3f7; border: 1px solid #dee0e5; margin-top: 20px; ;padding-top: 5px ;padding-bottom: 5px; text-align: left; border-radius: 4px;
+}
+.templete-heading h2
+{
+	font-size: 16px; color: #fd3c3d; text-transform: uppercase; padding: 0px; margin: 0px; letter-spacing: 2px;
+}
+.workout-next-button
+{
+	background-color: #fd3c3d; border-radius: 4px; padding-left: 40px; padding-right: 40px; padding-top: 10px; padding-bottom: 10px; margin-top: 30px; color: white; font-weight: 900; text-transform: uppercase; border: 0px; letter-spacing: 2px; font-size: 24px; margin-bottom: 20px;
+}
+.workout-next-button:hover
+{
+	background-color: #20232a;
+}
+.workout-pre-button
+{
+	background-color: #f2f3f7; border-radius: 4px; padding-left: 40px; padding-right: 40px; padding-top: 10px; padding-bottom: 10px; margin-top: 30px; color: #a6a7a9; font-weight: 900; text-transform: uppercase; border: 1px solid #dee0e5; letter-spacing: 2px; font-size: 24px; margin-bottom: 20px;
+}
+.workout-pre-button:hover
+{
+	background-color: #20232a;
+}
+
+.nav-tabs1
+{
+	border: 0px;
+}
+.nav-tabs1 > li
+{
+	margin-right: 0px; margin-top: 0px;
+}
+.nav-tabs1 > li.active > a, .nav-tabs1 > li.active > a:hover, .nav-tabs1 > li.active > a:focus
+{
+	background-color: #fd3c3d; border: 1px solid #fe1415; border-radius: 4px; color: #fff; font-weight: 900; text-transform: uppercase; letter-spacing: 2px;
+}
+.nav-tabs1 > li > a
+{
+	background-color: white; color: #20232a; border-radius: 4px; font-weight: 900; text-transform: uppercase; letter-spacing: 2px; border-bottom: 1px solid #dee0e5; padding-left: 120px; padding-right: 131px; padding-top: 15px; padding-bottom: 15px; line-height: 60px;
+}
+.check-box-sub
+{
+	margin-left: 0px !important;
+}
+.no-drills-bg
+{
+	background-color: #f2f3f7; border: 1px solid #dee0e5; padding-left: 5px; padding-right: 5px; padding-top: 15px; padding-bottom: 15px; margin-top: 20px; text-align: center; float: left; border-top-left-radius: 4px; border-bottom-left-radius: 4px; border-right: 0px; width: auto;
+}
+.no-drills-cal-bg
+{
+	background-color: #fd3c3d; border: 1px solid #ff1112; padding-left: 5px; padding-right: 5px; padding-top: 15px; padding-bottom: 15px; margin-top: 20px; border-radius: 4px; text-align: center; border-left: 0px; width: auto;
+}
+.no-drills h2
+{
+	font-size: 18px; color: #2c2c2c; text-transform: uppercase; letter-spacing: 2px; font-weight: normal; padding: 0px; margin: 0px;
+}
+.no-drills h2 span
+{
+	font-size: 18px; color: #fff; text-transform: uppercase; letter-spacing: 2px; font-weight: 900; padding: 0px; margin: 0px;
+}
+.warm-up-detail-box
+{
+	width: 100%; background-color: #f2f3f7; border: 1px solid #e2e3e8; margin-top: 20px;
+}
+.warm-up-detail-heading-box
+{
+	width: 100%; background-color: #20232a; border-top-left-radius: 4px; border-top-right-radius: 4px; padding-left: 10px; padding-right: 10px; padding-top: 15px; padding-bottom: 15px; text-align: center;
+}
+.warm-up-detail-heading h2
+{
+	font-size: 18px; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; color: white; padding: 0px; margin: 0px; padding-top: 5px; padding-bottom: 5px;
+}
+.warm-up-detail-heading h2 span
+{
+	font-size: 10px; font-weight: normal; text-transform: uppercase; letter-spacing: 2px; color: #20232a; padding: 0px; margin: 0px; padding-left: 15px; line-height: 32px;
+}
+.warm-up-detail-heading h3
+{
+	font-size: 10px; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; color: #fd3c3d; padding: 0px; margin: 0px; padding-top: 15px; padding-bottom: 15px;
+}
+.edit-button
+{
+	background-color: #fd3c3d; border-radius: 4px; padding-left: 10px; padding-right: 10px; padding-top: 10px; padding-bottom: 10px; margin-top: 5px; color: white; font-weight: normal; text-transform: uppercase; border: 0px; letter-spacing: 2px; font-size: 10px; float: left; margin-bottom: 5px;
+}
+.edit-button:hover
+{
+	background-color: #20232a;
+}
+/*-------- Workout popup css Style End -------- */
+
+.height213{
+	min-height: 213px;
+}
+
+
+
+
+
+
+
+
+/*-------- Media Query Css Style Start (768px) Start -------- */
+@media (max-width: 768px)
+{
+	.nav-tabs > li
+	{
+	margin-right: 0px; margin-top: 30px;
+	}
+	.nav-tabs > li > a
+	{
+	background-color: #f2f3f7; color: #20232a; border-radius: 4px; font-weight: 900; text-transform: uppercase; letter-spacing: 2px; border: 1px solid #dee0e5; padding-left: 15px; padding-right: 15px; padding-top: 15px; padding-bottom: 15px; font-size: 12px;
+	}
+	.col
+	{
+		padding-right: 0px; padding-left: 0px;
+	}
+	.nav-tabs1
+	{
+	border: 0px;
+	}
+	.nav-tabs1 > li
+	{
+	margin-right: 0px; margin-top: 0px;
+	}
+	.nav-tabs1 > li.active > a, .nav-tabs1 > li.active > a:hover, .nav-tabs1 > li.active > a:focus
+	{
+	background-color: #fd3c3d; border: 1px solid #fe1415; border-radius: 4px; color: #fff; font-weight: 900; text-transform: uppercase; letter-spacing: 2px;
+	}
+	.nav-tabs1 > li > a
+	{
+	background-color: #f2f3f7; color: #20232a; border-radius: 4px; font-weight: 900; text-transform: uppercase; letter-spacing: 2px; border-bottom: 1px solid #dee0e5; padding-left: 15px; padding-right: 15px; padding-top: 15px; padding-bottom: 15px; line-height: 40px;
+	}
+	.no-drills-bg
+	{
+	background-color: #f2f3f7; border: 1px solid #dee0e5; padding-left: 5px; padding-right: 5px; padding-top: 15px; padding-bottom: 15px; margin-top: 50px; text-align: center; float: left; width: 100%;
+	}
+	.no-drills-cal-bg
+	{
+	background-color: #fd3c3d; border: 1px solid #ff1112; padding-left: 5px; padding-right: 5px; padding-top: 15px; padding-bottom: 15px; margin-top: 10px; border-radius: 4px; text-align: center; width: 100%; float: left;
+	}
+}
+/*-------- Media Query Css Style Start (768px) End -------- */
+
+
+/*-------- Media Query Css Style Start (720px) Start -------- */
+@media (max-width: 720px)
+{
+	.nav-tabs > li
+	{
+	margin-right: 0px; margin-top: 30px;
+	}
+	.nav-tabs > li > a
+	{
+	background-color: #f2f3f7; color: #20232a; border-radius: 4px; font-weight: 900; text-transform: uppercase; letter-spacing: 2px; border: 1px solid #dee0e5; padding-left: 15px; padding-right: 15px; padding-top: 15px; padding-bottom: 15px; font-size: 12px;
+	}
+	.col
+	{
+		padding-right: 0px; padding-left: 0px;
+	}
+	.nav-tabs1
+	{
+	border: 0px;
+	}
+	.nav-tabs1 > li
+	{
+	margin-right: 0px; margin-top: 0px;
+	}
+	.nav-tabs1 > li.active > a, .nav-tabs1 > li.active > a:hover, .nav-tabs1 > li.active > a:focus
+	{
+	background-color: #fd3c3d; border: 1px solid #fe1415; border-radius: 4px; color: #fff; font-weight: 900; text-transform: uppercase; letter-spacing: 2px;
+	}
+	.nav-tabs1 > li > a
+	{
+	background-color: #f2f3f7; color: #20232a; border-radius: 4px; font-weight: 900; text-transform: uppercase; letter-spacing: 2px; border-bottom: 1px solid #dee0e5; padding-left: 15px; padding-right: 15px; padding-top: 15px; padding-bottom: 15px; line-height: 40px;
+	}
+	.no-drills-bg
+	{
+	background-color: #f2f3f7; border: 1px solid #dee0e5; padding-left: 5px; padding-right: 5px; padding-top: 15px; padding-bottom: 15px; margin-top: 50px; text-align: center; float: left; width: 100%;
+	}
+	.no-drills-cal-bg
+	{
+	background-color: #fd3c3d; border: 1px solid #ff1112; padding-left: 5px; padding-right: 5px; padding-top: 15px; padding-bottom: 15px; margin-top: 10px; border-radius: 4px; text-align: center; width: 100%; float: left;
+	}
+}
+/*-------- Media Query Css Style Start (720px) End -------- */
+
+
+/*-------- Media Query Css Style Start (480px) Start -------- */
+@media (max-width: 480px)
+{
+	.nav-tabs > li
+	{
+	margin-right: 0px; margin-top: 30px;
+	}
+	.nav-tabs > li > a
+	{
+	background-color: #f2f3f7; color: #20232a; border-radius: 4px; font-weight: 900; text-transform: uppercase; letter-spacing: 2px; border: 1px solid #dee0e5; padding-left: 15px; padding-right: 15px; padding-top: 15px; padding-bottom: 15px; font-size: 12px;
+	}
+	.col
+	{
+		padding-right: 0px; padding-left: 0px;
+	}
+	.nav-tabs1
+	{
+	border: 0px;
+	}
+	.nav-tabs1 > li
+	{
+	margin-right: 0px; margin-top: 0px;
+	}
+	.nav-tabs1 > li.active > a, .nav-tabs1 > li.active > a:hover, .nav-tabs1 > li.active > a:focus
+	{
+		background-color: #f2f3f7; color: #20232a; border-radius: 4px; font-weight: 900; text-transform: uppercase; letter-spacing: 2px; border: 1px solid #dee0e5; padding-left: 15px; padding-right: 15px; padding-top: 15px; padding-bottom: 15px; font-size: 14px;
+	}
+	.nav-tabs1 > li > a
+	{
+	background-color: #f2f3f7; color: #20232a; border-radius: 4px; font-weight: 900; text-transform: uppercase; letter-spacing: 2px; border-bottom: 1px solid #dee0e5; padding-left: 15px; padding-right: 15px; padding-top: 15px; padding-bottom: 15px; line-height: 40px;
+	}
+	.no-drills-bg
+	{
+	background-color: #f2f3f7; border: 1px solid #dee0e5; padding-left: 5px; padding-right: 5px; padding-top: 15px; padding-bottom: 15px; margin-top: 50px; text-align: center; float: left; width: 100%;
+	}
+	.no-drills-cal-bg
+	{
+	background-color: #fd3c3d; border: 1px solid #ff1112; padding-left: 5px; padding-right: 5px; padding-top: 15px; padding-bottom: 15px; margin-top: 10px; border-radius: 4px; text-align: center; width: 100%; float: left;
+	}
+}
+/*-------- Media Query Css Style Start (480px) End -------- */
+
+
+/*-------- Media Query Css Style Start (360px) Start -------- */
+@media (max-width: 360px)
+{
+	.nav-tabs > li
+	{
+	margin-right: 0px; margin-top: 30px;
+	}
+	.nav-tabs > li > a
+	{
+	background-color: #f2f3f7; color: #20232a; border-radius: 4px; font-weight: 900; text-transform: uppercase; letter-spacing: 2px; border: 1px solid #dee0e5; padding-left: 15px; padding-right: 15px; padding-top: 15px; padding-bottom: 15px; font-size: 14px;
+	}
+	.col
+	{
+		padding-right: 0px; padding-left: 0px;
+	}
+	.nav-tabs1
+	{
+	border: 0px;
+	}
+	.nav-tabs1 > li
+	{
+	margin-right: 0px; margin-top: 0px;
+	}
+	.nav-tabs1 > li.active > a, .nav-tabs1 > li.active > a:hover, .nav-tabs1 > li.active > a:focus
+	{
+	background-color: #fd3c3d; border: 1px solid #fe1415; border-radius: 4px; color: #fff; font-weight: 900; text-transform: uppercase; letter-spacing: 2px;
+	}
+	.nav-tabs1 > li > a
+	{
+	background-color: #f2f3f7; color: #20232a; border-radius: 4px; font-weight: 900; text-transform: uppercase; letter-spacing: 2px; border-bottom: 1px solid #dee0e5; padding-left: 15px; padding-right: 15px; padding-top: 15px; padding-bottom: 15px; line-height: 40px;
+	}
+	.no-drills-bg
+	{
+	background-color: #f2f3f7; border: 1px solid #dee0e5; padding-left: 5px; padding-right: 5px; padding-top: 15px; padding-bottom: 15px; margin-top: 50px; text-align: center; float: left; width: 100%;
+	}
+	.no-drills-cal-bg
+	{
+	background-color: #fd3c3d; border: 1px solid #ff1112; padding-left: 5px; padding-right: 5px; padding-top: 15px; padding-bottom: 15px; margin-top: 10px; border-radius: 4px; text-align: center; width: 100%; float: left;
+	}
+}
+/*-------- Media Query Css Style Start (360px) End -------- */
+
+
+/*-------- Media Query Css Style Start (320px) Start -------- */
+@media (max-width: 320px)
+{
+	.nav-tabs > li
+	{
+	margin-right: 0px; margin-top: 30px;
+	}
+	.nav-tabs > li > a
+	{
+		background-color: #f2f3f7; color: #20232a; border-radius: 4px; font-weight: 900; text-transform: uppercase; letter-spacing: 2px; border: 1px solid #dee0e5; padding-left: 15px; padding-right: 15px; padding-top: 15px; padding-bottom: 15px; font-size: 14px;
+	}
+	.col
+	{
+		padding-right: 0px; padding-left: 0px;
+	}
+	.nav-tabs1
+	{
+	border: 0px;
+	}
+	.nav-tabs1 > li
+	{
+	margin-right: 0px; margin-top: 0px;
+	}
+	.nav-tabs1 > li.active > a, .nav-tabs1 > li.active > a:hover, .nav-tabs1 > li.active > a:focus
+	{
+	background-color: #fd3c3d; border: 1px solid #fe1415; border-radius: 4px; color: #fff; font-weight: 900; text-transform: uppercase; letter-spacing: 2px;
+	}
+	.nav-tabs1 > li > a
+	{
+	background-color: #f2f3f7; color: #20232a; border-radius: 4px; font-weight: 900; text-transform: uppercase; letter-spacing: 2px; border-bottom: 1px solid #dee0e5; padding-left: 15px; padding-right: 15px; padding-top: 15px; padding-bottom: 15px; line-height: 40px;
+	}
+	.no-drills-bg
+	{
+	background-color: #f2f3f7; border: 1px solid #dee0e5; padding-left: 5px; padding-right: 5px; padding-top: 15px; padding-bottom: 15px; margin-top: 50px; text-align: center; float: left; width: 100%;
+	}
+	.no-drills-cal-bg
+	{
+	background-color: #fd3c3d; border: 1px solid #ff1112; padding-left: 5px; padding-right: 5px; padding-top: 15px; padding-bottom: 15px; margin-top: 10px; border-radius: 4px; text-align: center; width: 100%; float: left;
+	}
+}
+/*-------- Media Query Css Style Start (320px) End -------- */

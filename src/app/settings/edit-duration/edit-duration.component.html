@@ -1,0 +1,17 @@
+<table class="table tablewrapper">
+  <tr>
+      <td class="innerTable" [formGroup]="durationForm">
+          <input class="form-control" type="number" value="{{duration.minutes}}" id="example-url-input" name="minutes" formControlName="minutes">
+      </td>
+      <td class="innerTable" [formGroup]="durationForm">
+          <input class="form-control" type="number" value="{{duration.free_time_from}}" id="example-url-input"  name="from" formControlName="free_time_from" >
+      </td>
+      <td class="innerTable" [formGroup]="durationForm">
+          <input class="form-control" type="number" value="{{duration.free_time_to}}" id="example-url-input"  name="to" formControlName="free_time_to">
+      </td>
+      <td class="innerTable" >
+          <span style="cursor:pointer;" class="badge badge-primary" (click)="submit()">Save</span>
+          <span style="cursor:pointer;" (click)="cancel()" class="badge badge-secondary">Cancel</span>
+      </td>
+  </tr>
+</table>

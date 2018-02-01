@@ -1,0 +1,29 @@
+<!-- <button style="float:right;margin-right: 80px;" (click)="edit(null)" class="btn btn-secondary" ><i class="fa fa-pencil" aria-hidden="true"></i>Edit</button> -->
+<div class="row">
+  <div class="col-md-6">
+        <div class="row">
+            <div class="col-md-12">
+                <template-component></template-component>    
+                <br />
+            </div>
+            <div class="col-md-12">
+                <payment-component [setting]="payment"></payment-component>
+            </div>
+        </div>
+  </div>
+
+  <div class="col-md-6">
+        <div class="row">
+            <div class="col-md-12">
+                <types-template-component></types-template-component>
+                <br />
+            </div>
+            <div class="col-md-12">
+                <diy-component [setting]="generalSettings"></diy-component>
+            </div>
+        </div>
+  </div>
+
+  
+  
+</div>
